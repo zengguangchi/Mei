@@ -11,12 +11,12 @@ def index(request):
     token = request.session.get('token')
     users = User.objects.filter(token=token)
     if users.count():
-        users = users.first()
-
+        user= users.first()
+        username=user.username
     else:
-        users = None
-    # username=request.COOKIES.get('username')
-    return render(request, 'index.html', context={'users':users })
+        username = None
+
+    return render(request, 'index.html', context={'username':username })
 
 
 
@@ -39,18 +39,32 @@ def regsiter(request):
         return render(request, 'regsiter.html')
     elif request.method=='POST':
         user=User()
-        user.username=request.POST.get('username')
-        user.passwrod=request.POST.get("passWordtext")
+        user.username=request.POST.get('phone')
+        user.passwrod=getattr_password(request.POST.get('password'))
         user.token=getattr_token()
         user.save()
         response=redirect('mlh:index')
-        response.sesstion['token']=user.token
+        request.session['token']=user.token
         return response
 
 
 def login(request):
-    return render(request,'login.html')
-
-
+    if request.method=='GET':
+        return render(request,'login.html')
+    elif request.method =='POST':
+        username=request.POST.get('username')
+        password=getattr_password(request.POST.get('password'))
+        users=User.objects.filter(username=username).filter(passwrod=password)
+        if users.count():
+            user=users.first()
+            user.token=getattr_token()
+            user.save()
+            response=redirect('mlh:index')
+            request.session['token'] = user.token
+            return response
+        else:
+            return render(request,'login.html',context={'err':'用户不存在或密码错误'})
 def logout(request):
-    return render(request,'index.html')
+    response=redirect('mlh:index')
+    request.session.flush()
+    return response

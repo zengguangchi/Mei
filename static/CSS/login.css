@@ -117,16 +117,16 @@ div.login_wrapper div.login_container{
     color: red;
 }
 .hydl_btn {
-    width: 240px;
+    width: 250px;
     height: 35px;
     overflow: hidden;
     margin-left: 100px;
     cursor: pointer;
 }
-.hydl_btn a {
+.hydl_btn input {
     display: block;
     background-color: #db2725;
-    width: 240px;
+    width: 250px;
     height: 35px;
     text-align: center;
     line-height: 35px;

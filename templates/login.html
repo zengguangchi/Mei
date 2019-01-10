@@ -22,7 +22,8 @@
                     <span>没有账号？<a href={% url 'mlh:regsiter' %}>免费注册</a></span>
                 </div>
                 <div class="hydl_loginbar">
-                    <form action="" method="post" id="loginForm">
+                    <form   method="post"  id="loginForm"  action={% url 'mlh:login' %}  >
+                            {% csrf_token %}
                         <ul>
                             <li>
                                 <span>账户名:</span><input type="text" value="" placeholder="请输入手机或邮箱" id="username" name="username">
@@ -31,11 +32,11 @@
                             <li>
                                 <span>密码:</span><input id="passWordtext" type="password" placeholder="请输入6-20个字符" maxlength="20" name="password">
                             </li>
-                            <li id="word_length" style="margin-left: 130px">
-                                <span id="low" style="height: 30px;width: 60px;background:darkgray; text-align: center;line-height: 30px">低</span>
-                                <span id = "middle" style="height:30px;width: 60px;background:darkgray; text-align: center;line-height: 30px">中</span>
-                                <span id = "height" style="height: 30px;width: 60px;background:darkgray; text-align: center;line-height: 30px">高</span>
-                            </li>
+{#                            <li id="word_length" style="margin-left: 130px">#}
+{#                                <span id="low" style="height: 30px;width: 60px;background:darkgray; text-align: center;line-height: 30px">低</span>#}
+{#                                <span id = "middle" style="height:30px;width: 60px;background:darkgray; text-align: center;line-height: 30px">中</span>#}
+{#                                <span id = "height" style="height: 30px;width: 60px;background:darkgray; text-align: center;line-height: 30px">高</span>#}
+{#                            </li>#}
                             <p id = "Pwd_error"></p>
 {#                            <li id="rdm_img" class="showstyle">#}
 {#                                <span>验证码:</span>#}
@@ -44,14 +45,15 @@
 {#                                <span id="randomNum" style="float: right;width: 120px;height:35px;margin: 0 10px;background:#9ac9d8;text-align: center">点击生成验证码</span>#}
 {#                            </li>#}
 {#                            <p class = "Rdm_error" id="Rdm_error"></p>#}
-{#                        </ul>#}
+                            <div class="hydl_btn">
+                                <input  type="submit" value="会员登录">
+                            </div>
+                        </ul>
                     </form>
                 </div>
                 <div style="clear:both;"></div>
 
-                <div class="hydl_btn">
-                    <a id="submitBtn">会员登录</a>
-                </div>
+
 
                 <div class="hydl_login">
                     <p><input type="checkbox" id="checkbox">下次自动登录</p>

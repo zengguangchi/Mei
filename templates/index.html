@@ -24,7 +24,14 @@
                         <span>|</span>
                     </li>
                     <li class="theLi">
-                        <a href={% url 'mlh:login' %}>登录</a>
+                       {% if username %}
+                           <a href="#">{{ username }}</a>
+                           <img src="" alt="">
+                           <a href={% url 'mlh:logout' %}>退出</a>
+                       {% else %}
+                           <a href={% url 'mlh:login' %}>登录</a>
+                       {% endif %}
+
                     </li>
                     <li class="theLi">
                         <span>|</span>

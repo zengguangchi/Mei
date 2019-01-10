@@ -131,10 +131,10 @@ div.login_wrapper div.login_container{
     margin-left: 90px;
     cursor: pointer;
 }
-.hydl_btn a {
+.hydl_btn input {
     display: block;
     background-color: #db2725;
-    width: 260px;
+    width: 250px;
     height: 35px;
     text-align: center;
     line-height: 35px;
