@@ -7,6 +7,13 @@ class User(models.Model):
 
 class Lunbo(models.Model):
     img=models.CharField(max_length=200)
+    def __str__(self):
+        return self.img
 
-# class Men(models.Model):
-#     id=models.CharField(max_length=20)
+class Men(models.Model):
+    mai=models.CharField(max_length=40)
+    img=models.CharField(max_length=50)
+    p=models.CharField(max_length=50)
+    span=models.CharField(max_length=50)
+    class Mate:
+        id=models.CharField(max_length=20)

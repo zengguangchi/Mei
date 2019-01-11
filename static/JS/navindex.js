@@ -71,6 +71,16 @@ $(function(){
     })
 
     //轮播图
+      var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        paginationClickable: true,
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: 2500,
+        autoplayDisableOnInteraction: false
+    });
 
     // 1，获取数据
     $.get("json/lunbo.json",function(data){
@@ -273,34 +283,34 @@ $(function(){
     //        })
     //    })
     //})
+    //
+    // $(".div1").find("span").each(function (index,ele){
+    //     $(".div1").find("span").eq(index).click(function(){
+    //         //console.log(index);
+    //         $(".theSlider").css({
+    //             "left" : 90*index
+    //         })
+    //         $(".activitiesContent").hide();
+    //         $(".activitiesContent").eq(index).show();
+    //     })
+    // })
+    //
+    // $(".theActivities").hover(function () {
+    //     $(this).find(".theMask").show();
+    //     $(this).find(".theButton").show();
+    // }, function () {
+    //     $(this).find(".theMask").hide();
+    //     $(this).find(".theButton").hide();
+    // })
 
-    $(".div1").find("span").each(function (index,ele){
-        $(".div1").find("span").eq(index).click(function(){
-            //console.log(index);
-            $(".theSlider").css({
-                "left" : 90*index
-            })
-            $(".activitiesContent").hide();
-            $(".activitiesContent").eq(index).show();
-        })
-    })
 
-    $(".theActivities").hover(function () {
-        $(this).find(".theMask").show();
-        $(this).find(".theButton").show();
-    }, function () {
-        $(this).find(".theMask").hide();
-        $(this).find(".theButton").hide();
-    })
-
-
-    //页面显示登录用户名
-    if (location.search){
-        var myname = location.search.split("?")[1];
-        $("#ul_header .theLi").eq(0).find("a").html(myname);
-        $("#ul_header .theLi").eq(2).find("a").html("退出");
-        $("#men").attr("href","Men.html?"+myname)
-    }
+    // //页面显示登录用户名
+    // if (location.search){
+    //     var myname = location.search.split("?")[1];
+    //     $("#ul_header .theLi").eq(0).find("a").html(myname);
+    //     $("#ul_header .theLi").eq(2).find("a").html("退出");
+    //     $("#men").attr("href","Men.html?"+myname)
+    // }
 
 
 

@@ -3,10 +3,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Homepage</title>
+    <title>魅力惠|首页</title>
+
     <script  type="text/javascript"  src={% static "JS/jquery-1.12.3.js" %} ></script>
     <script  type="text/javascript"  src={% static "JS/navindex.js" %}></script>
     <link rel="stylesheet" type="text/css"  href={% static "CSS/HomeStyle.css" %} >
+    <link rel="stylesheet" href="{% static 'CSS/swiper-3.4.2.min.css' %}">
+    <script src="{% static 'JS/swiper-3.4.2.jquery.min.js' %}"></script>
+
 </head>
 
 <body>
@@ -17,7 +21,7 @@
             <div class="quick_access_left">
                 <ul id="ul_header">
                     <li class="theLi">
-                        <img class="youli" src="{% static 'images/zhuceyouli.gif' %}" alt="">
+                        <img class="youli" src="{% static 'images/zhuceyouli.gif'%}" alt="">
                         <a  style="color: red;"  href={% url 'mlh:regsiter' %} >注册有礼</a>
                     </li>
                     <li class="theLi">
@@ -48,11 +52,10 @@
                     <li><a href="#">手机版</a></li>
                     <li> | </li>
                     <li>
-                        <a href="#" style="display:inline-block; width: 30px;height: 30px;background: url(images/base_z.png) no-repeat -600px -322px">
-
-                        </a>
+                        <a href="#" style="display:inline-block; width: 30px;height: 30px;background: url({% static 'images/base_z.png' %}) no-repeat -600px -322px"></a>
                     </li>
                 </ul>
+
                 <div class="app">
                     <img src="{% static 'images/app.jpg' %}" alt="">
                     <p>扫描下载APP</p>
@@ -61,8 +64,8 @@
         </div>
     </div>
     <div class="branding">
-        <a href=""><div class="logo" style="background:url(images/base_z.png) no-repeat -846px -292px;"></div></a>
-        <div class="logo_slogan" style="background:url(images/base_z.png) no-repeat -897px -72px;"></div>
+        <a href=""><div class="logo" style="background:url({% static 'images/base_z.png' %}) no-repeat -846px -292px;"></div></a>
+        <div class="logo_slogan" style="background:url({% static 'images/base_z.png' %}) no-repeat -897px -72px;"></div>
     </div>
 
     <!--导航栏-->
@@ -267,15 +270,18 @@
 </div>
 
 <!--轮播图-->
-<div id="box">
-    <ul id="list">
+<div class="swiper-container">
+        <div class="swiper-wrapper">
+           {% for lunbo in lunbos %}
+                <div class="swiper-slide"><img src="{% static lunbo %}" alt=""></div>
+           {% endfor %}
 
-    </ul>
-    <ul id="list2">
-
-    </ul>
-    <div id="left"> </div>
-    <div id="right"> </div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- Add Arrows -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
 </div>
 
 <!--楼梯固定窗口-->
@@ -321,7 +327,7 @@
             <div class="e_list_box">
                 <div class="e_list clearfix">
                     <div class="e_item">
-                        <a href="">
+                        <a href={% url 'mlh:detailed' %}>
                             <div class="e_thumbnail_box">
                                 <img src="{% static 'images/nv1.jpg' %}" alt="" style="width: 318px;height: 191px;margin: 0;overflow: hidden">
                                 <div class="e_mouseover">
@@ -411,7 +417,7 @@
                         </a>
                     </div>
                     <div class="e_item">
-                        <a href="">
+                        <a href={% url 'mlh:detailed' %}>
                             <div class="e_thumbnail_box">
                                 <img src="{% static 'images/nv6.jpg' %}" alt="" style="width: 318px;height: 191px;margin: 0;overflow: hidden">
                                 <div class="e_mouseover">
