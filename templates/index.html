@@ -326,24 +326,27 @@
             </h2>
             <div class="e_list_box">
                 <div class="e_list clearfix">
-                    <div class="e_item">
-                        <a href={% url 'mlh:detailed' %}>
+                    {% for men in mens %}
+                        <div class="e_item">
+                        <a href={% url 'mlh:detailed'  men.id %}>
                             <div class="e_thumbnail_box">
-                                <img src="{% static 'images/nv1.jpg' %}" alt="" style="width: 318px;height: 191px;margin: 0;overflow: hidden">
+                                <img src="{% static men.img %}" alt="" style="width: 318px;height: 191px;margin: 0;overflow: hidden">
                                 <div class="e_mouseover">
 
                                 </div>
                             </div>
                             <div class="e_info">
                                 <span class="e_name">
-                                    不惧秋凉，女士时尚上装专场
+                                   {{ men.p }}
                                 </span>
                                 <span class="e_discount">
-                                    <em>0.5</em>折起
+                                    <em>{{ men.span }}</em>
                                 </span>
                             </div>
                         </a>
                     </div>
+                    {% endfor %}
+
                     <div class="e_item">
                         <a href="">
                             <div class="e_thumbnail_box">
@@ -417,7 +420,7 @@
                         </a>
                     </div>
                     <div class="e_item">
-                        <a href={% url 'mlh:detailed' %}>
+                        <a href="#">
                             <div class="e_thumbnail_box">
                                 <img src="{% static 'images/nv6.jpg' %}" alt="" style="width: 318px;height: 191px;margin: 0;overflow: hidden">
                                 <div class="e_mouseover">

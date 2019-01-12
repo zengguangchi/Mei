@@ -4,11 +4,12 @@ import time
 from django.shortcuts import render, redirect
 
 # Create your views here.
-from meilihuiapp.models import User, Lunbo
+from meilihuiapp.models import User, Lunbo, Men, GoodsDetailed
 
 
 def index(request):
     lunbos= Lunbo.objects.all()
+    mens=Men.objects.all()
     token = request.session.get('token')
     users = User.objects.filter(token=token)
     if users.count():
@@ -17,7 +18,7 @@ def index(request):
     else:
         username = None
 
-    return render(request, 'index.html', context={'username':username ,'lunbos':lunbos})
+    return render(request, 'index.html', context={'username':username ,'lunbos':lunbos,'mens':mens})
 
 
 
@@ -71,5 +72,7 @@ def logout(request):
     return response
 
 
-def detailed(request):
-    return render(request,'detailed.html')
+def detailed(request,goodsid):
+    goods=GoodsDetailed.objects.get(pk=goodsid)
+
+    return render(request,'details.html', context={'goods':goods})
