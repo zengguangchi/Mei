@@ -92,26 +92,26 @@ $(function(){
                 $("#Pwd_error").text("");
             }
 
-        //验证重复密码
-        //     if($("#RPwd").val() != $("#passWordtext").val() ){
-        //         $("#RPwd_error").html("两次密码输入不一致");
-        //         return;
-        //     }else {
-        //         $("#RPwd_error").html("");
-        //     }
-        //
-        //
-        // //验证码验证
-        // if($(".yanzheng").val() == $("#randomNum").text() ){
-        //     $("#Rdm_error").text("")
-        // }else {
-        //     $("#Rdm_error").text("验证码输入错误");
-        //     return;
-        // }
-        //
+        验证重复密码
+            if($("#RPwd").val() != $("#passWordtext").val() ){
+                $("#RPwd_error").html("两次密码输入不一致");
+                return;
+            }else {
+                $("#RPwd_error").html("");
+            }
 
-        //验证是否已经注册过了
-        // 先获取之前保存在cookie中的用户
+
+        //验证码验证
+        if($(".yanzheng").val() == $("#randomNum").text() ){
+            $("#Rdm_error").text("")
+        }else {
+            $("#Rdm_error").text("验证码输入错误");
+            return;
+        }
+
+
+        验证是否已经注册过了
+        先获取之前保存在cookie中的用户
         var users = $.cookie("users")?JSON.parse($.cookie("users")):[] ;
 
         // 遍历users数组， 判断是否存在该用户，如果存在则不能注册

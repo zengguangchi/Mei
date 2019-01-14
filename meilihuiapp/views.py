@@ -81,3 +81,5 @@ def detailed(request,goodsid):
 def men(request):
     mens=Men.objects.all()
     return render(request,'men.html',context={'mens':mens})
+
+
