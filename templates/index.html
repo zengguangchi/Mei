@@ -72,8 +72,8 @@
     <div class="nav_container">
         <div class="nav">
             <ul class="nav1">
-                <li class="navLi"><a href="Homepage.html" style="color: red">首页</a></li>
-                <li class="navLi"><a href="Men.html" id="men">女士</a>
+                <li class="navLi"><a href="{% url 'mlh:index' %}" style="color: red">首页</a></li>
+                <li class="navLi"><a href="{% url 'mlh:men' %}l" id="men">女士</a>
                     <!--弹出二级菜单-->
                     <div class="pop_up1">
                         <div class="submenu" style="border-right:1px solid #e7e7e7">
@@ -326,26 +326,6 @@
             </h2>
             <div class="e_list_box">
                 <div class="e_list clearfix">
-                    {% for men in mens %}
-                        <div class="e_item">
-                        <a href={% url 'mlh:detailed'  men.id %}>
-                            <div class="e_thumbnail_box">
-                                <img src="{% static men.img %}" alt="" style="width: 318px;height: 191px;margin: 0;overflow: hidden">
-                                <div class="e_mouseover">
-
-                                </div>
-                            </div>
-                            <div class="e_info">
-                                <span class="e_name">
-                                   {{ men.p }}
-                                </span>
-                                <span class="e_discount">
-                                    <em>{{ men.span }}</em>
-                                </span>
-                            </div>
-                        </a>
-                    </div>
-                    {% endfor %}
 
                     <div class="e_item">
                         <a href="">

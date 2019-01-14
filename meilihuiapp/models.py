@@ -10,18 +10,42 @@ class Lunbo(models.Model):
     def __str__(self):
         return self.img
 
+
+class Men1(models.Model):
+    menid=models.CharField(max_length=10)
+    mai=models.CharField(max_length=20)
+    img=models.CharField(max_length=100)
+    title=models.CharField(max_length=100)
+    p1=models.CharField(max_length=50)
+    span=models.CharField(max_length=100)
+    span1=models.CharField(max_length=100)
+
+class GoodsDetailed1(models.Model):
+    title = models.CharField(max_length=100)
+    pr1 = models.CharField(max_length=50)
+    span = models.CharField(max_length=20)
+    span1 = models.CharField(max_length=20)
+    smallimg1=models.CharField(max_length=100)
+    smallimg2=models.CharField(max_length=100)
+    smallimg3=models.CharField(max_length=100)
+    dis=models.CharField(max_length=10)
+
 class Men(models.Model):
-    mai=models.CharField(max_length=40)
-    img=models.CharField(max_length=50)
-    p=models.CharField(max_length=50)
-    span=models.CharField(max_length=50)
+    menid=models.CharField(max_length=10)
+    mai=models.CharField(max_length=20)
+    img=models.CharField(max_length=100)
+    title=models.CharField(max_length=100)
+    p1=models.CharField(max_length=50)
+    span=models.CharField(max_length=100)
+    span1=models.CharField(max_length=100)
 
 class GoodsDetailed(models.Model):
-    title=models.CharField(max_length=20)
-    smalliimg1=models.CharField(max_length=50)
-    smalliimg2 = models.CharField(max_length=50)
-    smalliimg3 = models.CharField(max_length=50)
-    rmg=models.CharField(max_length=20)
-    rmg2=models.CharField(max_length=20)
-    dis=models.CharField(max_length=10)
+    title = models.CharField(max_length=100)
     img=models.CharField(max_length=100)
+    pr1 = models.CharField(max_length=50)
+    span = models.CharField(max_length=20)
+    span1 = models.CharField(max_length=20)
+    smallimg1=models.CharField(max_length=100)
+    smallimg2=models.CharField(max_length=100)
+    smallimg3=models.CharField(max_length=100)
+    dis=models.CharField(max_length=10)
