@@ -398,7 +398,7 @@
     <div class="breadcrumbs" id="breadcrumbs">
         <ul>
             <li><a href="{% url 'mlh:index' %}">首页</a></li>
-            <li id="silo"><span>></span><a href="Men.html">
+            <li id="silo"><span>></span><a href="{% url 'mlh:men' %}">
                 男士
             </a></li>
             <li id="event"><span>></span><a href="">
@@ -423,11 +423,11 @@
                 <a id="btn_pageLeft" class="left_page_have">左翻页</a>
                 <div class="product_smallimg">
                     <ul class="thumbs" style="overflow: hidden; position: absolute;width: 270px;" id="thumbs">
-                        <li><a class="selectimg" title="黑色纽扣式立领长袖外套"><img src="{% static goods.smalliimg1 %}"
+                        <li><a class="selectimg" title=""><img src="{% static goods.smallimg1%}"
                                                                           alt="黑色纽扣式立领长袖外套"></a></li>
-                        <li><a class="selectimg" title="黑色纽扣式立领长袖外套"><img src="{% static goods.smalliimg2 %}"
+                        <li><a class="selectimg" title=""><img src="{% static goods.smallimg2 %}"
                                                                           alt="黑色纽扣式立领长袖外套"></a></li>
-                        <li><a class="selectimg" title="黑色纽扣式立领长袖外套"><img src="{% static goods.smalliimg3 %}"
+                        <li><a class="selectimg" title=""><img src="{% static goods.smallimg3%}"
                                                                           alt="黑色纽扣式立领长袖外套"></a></li>
                     </ul>
                 </div>

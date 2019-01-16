@@ -1,24 +1,22 @@
 import hashlib
 import random
 import time
+
+from django.http import JsonResponse
 from django.shortcuts import render, redirect
 
 # Create your views here.
-from meilihuiapp.models import User, Lunbo, GoodsDetailed1, Men, GoodsDetailed
+from meilihuiapp.models import User, Lunbo,Men, GoodsDetailed
 
 
 def index(request):
     lunbos= Lunbo.objects.all()
 
     token = request.session.get('token')
-    users = User.objects.filter(token=token)
-    if users.count():
-        user= users.first()
-        username=user.username
-    else:
-        username = None
-
-    return render(request, 'index.html', context={'username':username ,'lunbos':lunbos})
+    user=None
+    if token:
+        user=User.objects.get(token=token)
+    return render(request, 'index.html', context={'user':user ,'lunbos':lunbos})
 
 
 
@@ -41,31 +39,36 @@ def regsiter(request):
         return render(request, 'regsiter.html')
     elif request.method=='POST':
         user=User()
-        user.username=request.POST.get('phone')
+        user.email=request.POST.get('email')
         user.passwrod=getattr_password(request.POST.get('password'))
+        user.name=request.POST.get('name')
+        user.phone=request.POST.get('phone')
         user.token=getattr_token()
+        request.session['token'] = user.token
         user.save()
-        response=redirect('mlh:index')
-        request.session['token']=user.token
-        return response
+        return redirect('mlh:index')
 
 
 def login(request):
     if request.method=='GET':
         return render(request,'login.html')
     elif request.method =='POST':
-        username=request.POST.get('username')
+        email=request.POST.get('email')
+        print(email)
         password=getattr_password(request.POST.get('password'))
-        users=User.objects.filter(username=username).filter(passwrod=password)
-        if users.count():
-            user=users.first()
-            user.token=getattr_token()
-            user.save()
-            response=redirect('mlh:index')
-            request.session['token'] = user.token
-            return response
-        else:
-            return render(request,'login.html',context={'err':'用户不存在或密码错误'})
+
+        try:
+            user=User.objects.get(email=email)
+
+            if user.passwrod == password:
+                user.token=getattr_token()
+                user.save()
+                request.session['token']=user.token
+                return redirect('mlh:index')
+            else:
+                return render(request,'login.html',context={'err':'密码错误'})
+        except:
+            return render(request,'login.html',context={'err':'用户不存在'})
 def logout(request):
     response=redirect('mlh:index')
     request.session.flush()
@@ -83,3 +86,10 @@ def men(request):
     return render(request,'men.html',context={'mens':mens})
 
 
+def checkemail(request):
+    email=request.GET.get("email")
+    users=User.objects.filter(email=email)
+    if users.exists():
+        return JsonResponse({'msg':'账号已存在','status':0})
+    else:
+        return JsonResponse({'mgs':'账号可用','status':1})

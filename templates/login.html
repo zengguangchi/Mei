@@ -4,10 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <title>登录页面</title>
-    <script type="text/javascript" src= {% static "JS/jquery-1.12.3.js" %} ></script>
+    <script type="text/javascript" src={% static "JS/jquery-1.12.3.js" %}></script>
     <script type="text/javascript" src={% static "JS/jquery.cookie.js" %}></script>
     <script type="text/javascript" src={% static "JS/login.js" %}></script>
-    <link rel="stylesheet" type="text/css"  href={% static "CSS/login.css" %} >
+    <link rel="stylesheet" type="text/css" href={% static "CSS/login.css" %}>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 <div class="login_wrapper">
@@ -21,38 +22,62 @@
                     <h2>会员登录</h2>
                     <span>没有账号？<a href={% url 'mlh:regsiter' %}>免费注册</a></span>
                 </div>
-                <div class="hydl_loginbar">
-                    <form   method="post"  id="loginForm"  action={% url 'mlh:login' %}  >
-                            {% csrf_token %}
-                        <ul>
-                            <li>
-                                <span>账户名:</span><input type="text" value="" placeholder="请输入手机或邮箱" id="username" name="username">
-                            </li>
-                            <p id = "Act_error" ></p>
-                            <li>
-                                <span>密码:</span><input id="passWordtext" type="password" placeholder="请输入6-20个字符" maxlength="20" name="password">
-                            </li>
-{#                            <li id="word_length" style="margin-left: 130px">#}
-{#                                <span id="low" style="height: 30px;width: 60px;background:darkgray; text-align: center;line-height: 30px">低</span>#}
-{#                                <span id = "middle" style="height:30px;width: 60px;background:darkgray; text-align: center;line-height: 30px">中</span>#}
-{#                                <span id = "height" style="height: 30px;width: 60px;background:darkgray; text-align: center;line-height: 30px">高</span>#}
-{#                            </li>#}
-                            <p id = "Pwd_error"></p>
-{#                            <li id="rdm_img" class="showstyle">#}
-{#                                <span>验证码:</span>#}
-{#                                <input class="yanzheng" name="random" id="randomImg" maxlength="6" type="text" style="width: 100px;">#}
-{#                                <img id="rdm" src= {% static "images/getRandom.jpg" %} style=" border: 1px solid #999;cursor: pointer;">#}
-{#                                <span id="randomNum" style="float: right;width: 120px;height:35px;margin: 0 10px;background:#9ac9d8;text-align: center">点击生成验证码</span>#}
-{#                            </li>#}
-{#                            <p class = "Rdm_error" id="Rdm_error"></p>#}
-                            <div class="hydl_btn">
-                                <input  type="submit" value="会员登录">
-                            </div>
-                        </ul>
-                    </form>
-                </div>
-                <div style="clear:both;"></div>
+                {#                <div class="hydl_loginbar">#}
+                {#                    <form   method="post"  id="loginForm"  action={% url 'mlh:login' %}  >#}
+                {#                            {% csrf_token %}#}
+                {#                        <ul>#}
+                {#                            <li>#}
+                {#                                <span>账户名:</span><input type="text" value="" placeholder="邮箱" id="username" name="email">#}
+                {#                            </li>#}
+                {#                            <p id = "Act_error" ></p>#}
+                {#                            <li>#}
+                {#                                <span>密码:</span><input id="passWordtext" type="password" placeholder="请输入密码" maxlength="20" name="password">#}
+                {#                            </li>#}
+                {#                            <li id="word_length" style="margin-left: 130px">#}
+                {#                                <span id="low" style="height: 30px;width: 60px;background:darkgray; text-align: center;line-height: 30px">低</span>#}
+                {#                                <span id = "middle" style="height:30px;width: 60px;background:darkgray; text-align: center;line-height: 30px">中</span>#}
+                {#                                <span id = "height" style="height: 30px;width: 60px;background:darkgray; text-align: center;line-height: 30px">高</span>#}
+                {#                            </li>#}
+                {#                            <p id = "Pwd_error"></p>#}
+                {#                            <li id="rdm_img" class="showstyle">#}
+                {#                                <span>验证码:</span>#}
+                {#                                <input class="yanzheng" name="random" id="randomImg" maxlength="6" type="text" style="width: 100px;">#}
+                {#                                <img id="rdm" src= {% static "images/getRandom.jpg" %} style=" border: 1px solid #999;cursor: pointer;">#}
+                {#                                <span id="randomNum" style="float: right;width: 120px;height:35px;margin: 0 10px;background:#9ac9d8;text-align: center">点击生成验证码</span>#}
+                {#                            </li>#}
+                {#                            <p class = "Rdm_error" id="Rdm_error"></p>#}
+                {#                            <div class="hydl_btn">#}
+                {#                                <input  type="submit" value="会员登录">#}
+                {#                            </div>#}
+                {#                        </ul>#}
+                {#                    </form>#}
+                {#                </div>#}
+                <form id="login" action="{% url 'mlh:login' %}" method="post">
+                    {% csrf_token %}
+                    {#           has-error  has-success#}
+                    <div class="form-group has-feedback" id="email">
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1">邮箱</span>
+                            <input type="text" class="form-control" placeholder="邮箱" name="email">
+                        </div>
+                        {#                glyphicon-remove  glyphicon-ok#}
+                        <span class="glyphicon form-control-feedback   " aria-hidden="true"></span>
+                    </div>
+                    <p style="color: red;" id="err"></p>
+                    <div class="form-group has-feedback" id="password">
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1">密码</span>
+                            <input type="password" class="form-control" placeholder="密码" name="password">
+                        </div>
+                        {#                glyphicon-remove  glyphicon-ok#}
+                        <span class="glyphicon form-control-feedback    " aria-hidden="true"></span>
+                    </div>
+                    <p style="color: red">{{ err }}</p>
+                    {#          如果直接使用input点击，会直接提交给服务器 [假如有错误，也同样提交] #}
+                    <div id="subButton" class="btn btn-success">会员登录</div>
+                </form>
 
+                <div style="clear:both;"></div>
 
 
                 <div class="hydl_login">
@@ -69,7 +94,7 @@
                 <div class="xian"></div>
                 <div class="erweima">
                     <div class="erweima">
-                        <img src={% static "images/app.jpg" %} />
+                        <img src={% static "images/app.jpg" %}/>
                         <p>扫描二维码或发送短信<br>“MLH”到“12114”<br>下载APP尊享独家优惠</p>
                     </div>
                 </div>
@@ -81,16 +106,22 @@
         <div class="footer">
             <div class="footer_advantage">
                 <ul>
-                    <li><a class="a1" href=""><span class="s1"></span><p>100%品牌授权正品</p></a></li>
-                    <li><a class="a2" href=""><span class="s2"></span><p>满688免运费</p></a></li>
-                    <li><a class="a3" href=""><span class="s3"></span><p>7天无条件退货</p></a></li>
-                    <li><a class="a4" href=""><span class="s4"></span><p>超值折扣</p></a></li>
-                    <li><a class="a5"  href=""><span class="s5"></span><p>9点限时闪购</p></a></li>
-                    <li class="footer_advantage_right"><a class="a6" href=""><span class="s6"></span><p>400－664－6698</p></a></li>
+                    <li><a class="a1" href=""><span class="s1"></span>
+                        <p>100%品牌授权正品</p></a></li>
+                    <li><a class="a2" href=""><span class="s2"></span>
+                        <p>满688免运费</p></a></li>
+                    <li><a class="a3" href=""><span class="s3"></span>
+                        <p>7天无条件退货</p></a></li>
+                    <li><a class="a4" href=""><span class="s4"></span>
+                        <p>超值折扣</p></a></li>
+                    <li><a class="a5" href=""><span class="s5"></span>
+                        <p>9点限时闪购</p></a></li>
+                    <li class="footer_advantage_right"><a class="a6" href=""><span class="s6"></span>
+                        <p>400－664－6698</p></a></li>
                 </ul>
             </div>
             <p class="footer_link">
-                <a  href="">关于魅力惠</a>
+                <a href="">关于魅力惠</a>
                 <a href="">加入我们</a>
                 <a href="">联系我们</a>
 
@@ -103,8 +134,10 @@
                 <span>COPYRIGHT©2016  杭州魅俪信息技术有限公司版权所有</span>浙ICP备16004860号-1
             </p>
             <p class="footer_license">
-                <span><a href="" target="_blank" rel="nofollow"><img   width="35" height="36" src={% static "images/foot1.jpg.png" %} ></a></span>
-                <a href="" target="_blank" rel="nofollow"><img   width="105" height="35"   src={% static "images/foot2.jpg.png" %}></a>
+                <span><a href="" target="_blank" rel="nofollow"><img width="35" height="36"
+                                                                     src={% static "images/foot1.jpg.png" %}></a></span>
+                <a href="" target="_blank" rel="nofollow"><img width="105" height="35"
+                                                               src={% static "images/foot2.jpg.png" %}></a>
             </p>
         </div>
     </div>

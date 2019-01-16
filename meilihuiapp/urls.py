@@ -8,6 +8,7 @@ urlpatterns=[
     url(r'^regsiter/$',views.regsiter,name='regsiter'),
     url(r'^logout/$',views.logout,name='logout'),
     url(r'^login/$',views.login,name='login'),
+    url(r'^checkemail/$',views.checkemail,name='checkemail'),
     url(r'^men/$',views.men,name='men'),
     url(r'^detailed/(\d+)/$',views.detailed,name='detailed'),
 ]
