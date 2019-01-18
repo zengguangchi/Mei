@@ -31,3 +31,8 @@ class GoodsDetailed(models.Model):
     smallimg2=models.CharField(max_length=100)
     smallimg3=models.CharField(max_length=100)
     dis=models.CharField(max_length=10)
+class Cart(models.Model):
+    user= models.ForeignKey(User)
+    goods=models.ForeignKey(GoodsDetailed)
+    isselect=models.BooleanField(default=True)
+    number=models.IntegerField()

@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <title>魅力惠|首页</title>
 
-    <script  type="text/javascript"  src={% static "JS/jquery-1.12.3.js" %} ></script>
-    <script  type="text/javascript"  src={% static "JS/navindex.js" %}></script>
-    <link rel="stylesheet" type="text/css"  href={% static "CSS/HomeStyle.css" %} >
+    <script type="text/javascript" src={% static "JS/jquery-1.12.3.js" %}></script>
+    <script type="text/javascript" src={% static "JS/navindex.js" %}></script>
+    <link rel="stylesheet" type="text/css" href={% static "CSS/HomeStyle.css" %}>
     <link rel="stylesheet" href="{% static 'CSS/swiper-3.4.2.min.css' %}">
     <script src="{% static 'JS/swiper-3.4.2.jquery.min.js' %}"></script>
 
@@ -21,8 +21,8 @@
             <div class="quick_access_left">
                 <ul id="ul_header">
                     <li class="theLi">
-                        <img class="youli" src="{% static 'images/zhuceyouli.gif'%}" alt="">
-                        <a  style="color: red;"  href={% url 'mlh:regsiter' %} >注册有礼</a>
+                        <img class="youli" src="{% static 'images/zhuceyouli.gif' %}" alt="">
+                        <a style="color: red;" href={% url 'mlh:regsiter' %}>注册有礼</a>
                     </li>
                     <li class="theLi">
                         <span>|</span>
@@ -35,35 +35,26 @@
                     </li>
                     {% if user %}
 
-                         <li class="theLi">
-                          <a href={% url 'mlh:logout' %}>退出</a><span>|</span>
+                        <li class="theLi">
+                            <a href={% url 'mlh:logout' %}>退出</a><span>|</span>
                         </li>
+                        <li class="theLi">
+                            <a href={% url 'mlh:cart' %}>购物车</a><span>|</span>
+                        </li>
+
                     {% endif %}
                     <li class="theLi">
                         <a href="#">收藏</a>
                     </li>
                 </ul>
-            </div>
-            <div class="quick_access_right">
-                <ul>
-                    <li><a href="#">在线咨询</a></li>
-                    <li> | </li>
-                    <li><a href="#">手机版</a></li>
-                    <li> | </li>
-                    <li>
-                        <a href="#" style="display:inline-block; width: 30px;height: 30px;background: url({% static 'images/base_z.png' %}) no-repeat -600px -322px"></a>
-                    </li>
-                </ul>
 
-                <div class="app">
-                    <img src="{% static 'images/app.jpg' %}" alt="">
-                    <p>扫描下载APP</p>
-                </div>
             </div>
         </div>
     </div>
     <div class="branding">
-        <a href=""><div class="logo" style="background:url({% static 'images/base_z.png' %}) no-repeat -846px -292px;"></div></a>
+        <a href="">
+            <div class="logo" style="background:url({% static 'images/base_z.png' %}) no-repeat -846px -292px;"></div>
+        </a>
         <div class="logo_slogan" style="background:url({% static 'images/base_z.png' %}) no-repeat -897px -72px;"></div>
     </div>
 
@@ -78,14 +69,24 @@
                         <div class="submenu" style="border-right:1px solid #e7e7e7">
                             <p class="title">热门活动</p>
                             <ul>
-                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">DVF&nbsp;初秋优雅连衣裙</a></li>
-                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">DVF &nbsp;摩登时尚搭配及配饰</a></li>
-                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">PH5&nbsp;秋冬温暖女装</a></li>
-                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">ATSUGI &amp; PHISOFA&nbsp;高质丝袜专场</a></li>
-                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">MARIE CLAIRE&nbsp;优雅巴黎范时尚女鞋(满折）</a></li>
-                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">GERARD DAREL&nbsp;时髦优雅穿搭哲学</a></li>
-                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">NINE WEST 等&nbsp;初秋上新</a></li>
-                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">花样早秋&nbsp;女士羊绒衫上新</a></li>
+                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">DVF&nbsp;初秋优雅连衣裙</a></li>
+                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">DVF &nbsp;摩登时尚搭配及配饰</a></li>
+                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">PH5&nbsp;秋冬温暖女装</a></li>
+                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">ATSUGI &amp;
+                                    PHISOFA&nbsp;高质丝袜专场</a></li>
+                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">MARIE CLAIRE&nbsp;优雅巴黎范时尚女鞋(满折）</a>
+                                </li>
+                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">GERARD DAREL&nbsp;时髦优雅穿搭哲学</a></li>
+                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">NINE WEST 等&nbsp;初秋上新</a></li>
+                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">花样早秋&nbsp;女士羊绒衫上新</a></li>
                             </ul>
                             <p class="more"><a href="" style="color: #666;">查看所有活动</a></p>
                         </div>
@@ -93,12 +94,24 @@
                         <div class="submenu">
                             <p class="title">商品分类</p>
                             <ul class="submenu_ul">
-                                <li><a href="" target="_blank" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">服装</a></li>
-                                <li><a href="" target="_blank" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">鞋履</a></li>
-                                <li><a href="" target="_blank" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">配饰</a></li>
-                                <li><a href="" target="_blank" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">包袋</a></li>
-                                <li><a href="" target="_blank" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">眼镜</a></li>
-                                <li><a href="" target="_blank" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">手表&amp;首饰</a></li>
+                                <li><a href="" target="_blank" style="color:#666;"
+                                       onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">服装</a></li>
+                                <li><a href="" target="_blank" style="color:#666;"
+                                       onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">鞋履</a></li>
+                                <li><a href="" target="_blank" style="color:#666;"
+                                       onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">配饰</a></li>
+                                <li><a href="" target="_blank" style="color:#666;"
+                                       onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">包袋</a></li>
+                                <li><a href="" target="_blank" style="color:#666;"
+                                       onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">眼镜</a></li>
+                                <li><a href="" target="_blank" style="color:#666;"
+                                       onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">手表&amp;首饰</a></li>
                             </ul>
                         </div>
                     </div>
@@ -109,14 +122,22 @@
                         <div class="submenu" style="border-right:1px solid #e7e7e7">
                             <p class="title">热门活动</p>
                             <ul>
-                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">MARCO AZZALI&nbsp;时尚男装配饰</a></li>
-                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">JUMBOUGG&nbsp;舒适休闲男鞋(满折)</a></li>
-                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">EDWIN&nbsp;休闲男装</a></li>
-                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">ODLO&nbsp;瑞士专业户外男装</a></li>
-                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">CHARRIOL&nbsp;精品男士鞋履秋季上新</a></li>
-                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">MEN'S STYLE&nbsp;能量美肌 型男必备</a></li>
-                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">BIOTHERM&nbsp;碧欧泉男士护肤专场</a></li>
-                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">老佛爷百货&nbsp;男士上装 夏日大降价</a></li>
+                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">MARCO AZZALI&nbsp;时尚男装配饰</a></li>
+                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">JUMBOUGG&nbsp;舒适休闲男鞋(满折)</a></li>
+                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">EDWIN&nbsp;休闲男装</a></li>
+                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">ODLO&nbsp;瑞士专业户外男装</a></li>
+                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">CHARRIOL&nbsp;精品男士鞋履秋季上新</a></li>
+                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">MEN'S STYLE&nbsp;能量美肌 型男必备</a></li>
+                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">BIOTHERM&nbsp;碧欧泉男士护肤专场</a></li>
+                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">老佛爷百货&nbsp;男士上装 夏日大降价</a></li>
                             </ul>
                             <p class="more"><a href="" style="color: #666;">查看所有活动</a></p>
                         </div>
@@ -124,12 +145,24 @@
                         <div class="submenu">
                             <p class="title">商品分类</p>
                             <ul class="submenu_ul">
-                                <li><a href="" target="_blank" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">服装</a></li>
-                                <li><a href="" target="_blank" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">鞋履</a></li>
-                                <li><a href="" target="_blank" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">配饰</a></li>
-                                <li><a href="" target="_blank" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">包袋</a></li>
-                                <li><a href="" target="_blank" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">眼镜</a></li>
-                                <li><a href="" target="_blank" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">手表&amp;首饰</a></li>
+                                <li><a href="" target="_blank" style="color:#666;"
+                                       onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">服装</a></li>
+                                <li><a href="" target="_blank" style="color:#666;"
+                                       onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">鞋履</a></li>
+                                <li><a href="" target="_blank" style="color:#666;"
+                                       onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">配饰</a></li>
+                                <li><a href="" target="_blank" style="color:#666;"
+                                       onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">包袋</a></li>
+                                <li><a href="" target="_blank" style="color:#666;"
+                                       onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">眼镜</a></li>
+                                <li><a href="" target="_blank" style="color:#666;"
+                                       onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">手表&amp;首饰</a></li>
                             </ul>
                         </div>
                     </div>
@@ -140,14 +173,24 @@
                         <div class="submenu" style="border-right:1px solid #e7e7e7">
                             <p class="title">热门活动</p>
                             <ul>
-                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">SK-II&nbsp;日本殿堂级护肤品</a></li>
-                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">BIOEFFECT&nbsp;高科技护肤品专场（满减）</a></li>
-                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">LEADERS&nbsp;韩国畅销面膜</a></li>
-                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">LA MER&nbsp;高端护肤品专场</a></li>
-                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">贵妇级护理宝典&nbsp;奢华高端护肤专场</a></li>
-                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">SHU UEMURA&nbsp;植村秀潮流彩妆护肤</a></li>
-                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">IMEDEEN&nbsp;怡美缇胶原蛋白专场</a></li>
-                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">MEDIHEAL&nbsp;美迪惠尔韩国人气面膜（满赠）</a></li>
+                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">SK-II&nbsp;日本殿堂级护肤品</a></li>
+                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">BIOEFFECT&nbsp;高科技护肤品专场（满减）</a>
+                                </li>
+                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">LEADERS&nbsp;韩国畅销面膜</a></li>
+                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">LA MER&nbsp;高端护肤品专场</a></li>
+                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">贵妇级护理宝典&nbsp;奢华高端护肤专场</a></li>
+                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">SHU UEMURA&nbsp;植村秀潮流彩妆护肤</a></li>
+                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">IMEDEEN&nbsp;怡美缇胶原蛋白专场</a></li>
+                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">MEDIHEAL&nbsp;美迪惠尔韩国人气面膜（满赠）</a>
+                                </li>
                             </ul>
                             <p class="more"><a href="" style="color: #666;">查看所有活动</a></p>
                         </div>
@@ -155,12 +198,24 @@
                         <div class="submenu">
                             <p class="title">商品分类</p>
                             <ul class="submenu_ul">
-                                <li><a href="" target="_blank" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">男士</a></li>
-                                <li><a href="" target="_blank" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">彩妆</a></li>
-                                <li><a href="" target="_blank" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">美体</a></li>
-                                <li><a href="" target="_blank" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">美发</a></li>
-                                <li><a href="" target="_blank" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">眼镜</a></li>
-                                <li><a href="" target="_blank" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">美妆</a></li>
+                                <li><a href="" target="_blank" style="color:#666;"
+                                       onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">男士</a></li>
+                                <li><a href="" target="_blank" style="color:#666;"
+                                       onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">彩妆</a></li>
+                                <li><a href="" target="_blank" style="color:#666;"
+                                       onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">美体</a></li>
+                                <li><a href="" target="_blank" style="color:#666;"
+                                       onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">美发</a></li>
+                                <li><a href="" target="_blank" style="color:#666;"
+                                       onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">眼镜</a></li>
+                                <li><a href="" target="_blank" style="color:#666;"
+                                       onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">美妆</a></li>
                             </ul>
                         </div>
                     </div>
@@ -171,14 +226,23 @@
                         <div class="submenu" style="border-right:1px solid #e7e7e7">
                             <p class="title">热门活动</p>
                             <ul>
-                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">PEARL LIFE&nbsp;日本珍珠锅（满减）</a></li>
-                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">CORKCICLE&nbsp;好莱坞当红保温杯首发(满减）</a></li>
-                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">GOURMET KITCHEN&nbsp;澳洲厨具</a></li>
-                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">GOURMET KITCHEN&nbsp;澳洲瓷器</a></li>
-                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">家务好帮手&nbsp;颜值有担当</a></li>
-                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">WOOLTARA&nbsp;澳洲羊毛床品</a></li>
-                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">HARIO&nbsp;日本进口餐具专场</a></li>
-                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">LESCHI&nbsp;德国进口功能性小物</a></li>
+                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">PEARL LIFE&nbsp;日本珍珠锅（满减）</a></li>
+                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">CORKCICLE&nbsp;好莱坞当红保温杯首发(满减）</a>
+                                </li>
+                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">GOURMET KITCHEN&nbsp;澳洲厨具</a></li>
+                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">GOURMET KITCHEN&nbsp;澳洲瓷器</a></li>
+                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">家务好帮手&nbsp;颜值有担当</a></li>
+                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">WOOLTARA&nbsp;澳洲羊毛床品</a></li>
+                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">HARIO&nbsp;日本进口餐具专场</a></li>
+                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">LESCHI&nbsp;德国进口功能性小物</a></li>
                             </ul>
                             <p class="more"><a href="" style="color: #666;">查看所有活动</a></p>
                         </div>
@@ -186,12 +250,24 @@
                         <div class="submenu">
                             <p class="title">商品分类</p>
                             <ul class="submenu_ul">
-                                <li><a href="" target="_blank" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">家电</a></li>
-                                <li><a href="" target="_blank" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">旅游</a></li>
-                                <li><a href="" target="_blank" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">床品</a></li>
-                                <li><a href="" target="_blank" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">3C数码产品</a></li>
-                                <li><a href="" target="_blank" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">厨具</a></li>
-                                <li><a href="" target="_blank" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">摆件</a></li>
+                                <li><a href="" target="_blank" style="color:#666;"
+                                       onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">家电</a></li>
+                                <li><a href="" target="_blank" style="color:#666;"
+                                       onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">旅游</a></li>
+                                <li><a href="" target="_blank" style="color:#666;"
+                                       onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">床品</a></li>
+                                <li><a href="" target="_blank" style="color:#666;"
+                                       onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">3C数码产品</a></li>
+                                <li><a href="" target="_blank" style="color:#666;"
+                                       onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">厨具</a></li>
+                                <li><a href="" target="_blank" style="color:#666;"
+                                       onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">摆件</a></li>
                             </ul>
                         </div>
                     </div>
@@ -202,14 +278,25 @@
                         <div class="submenu" style="border-right:1px solid #e7e7e7">
                             <p class="title">热门活动</p>
                             <ul>
-                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">B TOY&nbsp;创意环保玩具</a></li>
-                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">BENETTON&nbsp;色彩女童专场</a></li>
-                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">BENETTON&nbsp;色彩男童专场</a></li>
-                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">PAUL SMITH &amp; TRUSSARDI&nbsp;奢华男童</a></li>
-                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">PAUL SMITH &amp; TRUSSARDI&nbsp;奢华女童</a></li>
-                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">POLO RALPH LAUREN&amp;COLE HAAN&nbsp;童鞋&amp;休闲鞋</a></li>
-                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">JUZI STORE&nbsp;质感童年</a></li>
-                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">JACADI&nbsp;法国服饰&amp;配饰专场</a></li>
+                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">B TOY&nbsp;创意环保玩具</a></li>
+                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">BENETTON&nbsp;色彩女童专场</a></li>
+                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">BENETTON&nbsp;色彩男童专场</a></li>
+                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">PAUL SMITH &amp; TRUSSARDI&nbsp;奢华男童</a>
+                                </li>
+                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">PAUL SMITH &amp; TRUSSARDI&nbsp;奢华女童</a>
+                                </li>
+                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">POLO RALPH LAUREN&amp;COLE HAAN&nbsp;童鞋&amp;休闲鞋</a>
+                                </li>
+                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">JUZI STORE&nbsp;质感童年</a></li>
+                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">JACADI&nbsp;法国服饰&amp;配饰专场</a></li>
                             </ul>
                             <p class="more"><a href="" style="color: #666;">查看所有活动</a></p>
                         </div>
@@ -217,12 +304,24 @@
                         <div class="submenu">
                             <p class="title">商品分类</p>
                             <ul class="submenu_ul">
-                                <li><a href="" target="_blank" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">服装</a></li>
-                                <li><a href="" target="_blank" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">鞋履</a></li>
-                                <li><a href="" target="_blank" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">配饰</a></li>
-                                <li><a href="" target="_blank" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">玩具</a></li>
-                                <li><a href="" target="_blank" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">茶叶</a></li>
-                                <li><a href="" target="_blank" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">其他</a></li>
+                                <li><a href="" target="_blank" style="color:#666;"
+                                       onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">服装</a></li>
+                                <li><a href="" target="_blank" style="color:#666;"
+                                       onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">鞋履</a></li>
+                                <li><a href="" target="_blank" style="color:#666;"
+                                       onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">配饰</a></li>
+                                <li><a href="" target="_blank" style="color:#666;"
+                                       onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">玩具</a></li>
+                                <li><a href="" target="_blank" style="color:#666;"
+                                       onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">茶叶</a></li>
+                                <li><a href="" target="_blank" style="color:#666;"
+                                       onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">其他</a></li>
                             </ul>
                         </div>
                     </div>
@@ -232,14 +331,25 @@
                         <div class="submenu">
                             <p class="title">热门活动</p>
                             <ul>
-                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">B TOY&nbsp;创意环保玩具</a></li>
-                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">BENETTON&nbsp;色彩女童专场</a></li>
-                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">BENETTON&nbsp;色彩男童专场</a></li>
-                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">PAUL SMITH &amp; TRUSSARDI&nbsp;奢华男童</a></li>
-                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">PAUL SMITH &amp; TRUSSARDI&nbsp;奢华女童</a></li>
-                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">POLO RALPH LAUREN&amp;COLE HAAN&nbsp;童鞋&amp;休闲鞋</a></li>
-                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">JUZI STORE&nbsp;质感童年</a></li>
-                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'" onmouseout="this.style.cssText='color:#666;'">JACADI&nbsp;法国服饰&amp;配饰专场</a></li>
+                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">B TOY&nbsp;创意环保玩具</a></li>
+                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">BENETTON&nbsp;色彩女童专场</a></li>
+                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">BENETTON&nbsp;色彩男童专场</a></li>
+                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">PAUL SMITH &amp; TRUSSARDI&nbsp;奢华男童</a>
+                                </li>
+                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">PAUL SMITH &amp; TRUSSARDI&nbsp;奢华女童</a>
+                                </li>
+                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">POLO RALPH LAUREN&amp;COLE HAAN&nbsp;童鞋&amp;休闲鞋</a>
+                                </li>
+                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">JUZI STORE&nbsp;质感童年</a></li>
+                                <li><a href="" style="color:#666;" onmouseover="this.style.cssText='color:#db2726;'"
+                                       onmouseout="this.style.cssText='color:#666;'">JACADI&nbsp;法国服饰&amp;配饰专场</a></li>
                             </ul>
                             <p class="more"><a href="" style="color: #666;">查看所有活动</a></p>
                         </div>
@@ -251,13 +361,17 @@
             <!--购物袋-->
             <div class="shopping_bag" onclick="shoppingSkipBag();">
                 <ul>
-                    <li class="shopping_quantity" id="shopping_quantity" style="text-align: center; width: 30px;background: url(images/base_z.png) no-repeat -1014px -221px;">0</li>
+                    <li class="shopping_quantity" id="shopping_quantity"
+                        style="text-align: center; width: 30px;background: url(images/base_z.png) no-repeat -1014px -221px;">
+                        0
+                    </li>
                     <li>|</li>
                     <li id="shopping_amount">¥0.00</li>
                 </ul>
             </div>
 
-            <div class="pop_up_shopping" id="pop_up_shopping" onmouseover="alwaysShow()" onmouseleave="hideSmallBag();" style="display: none;">
+            <div class="pop_up_shopping" id="pop_up_shopping" onmouseover="alwaysShow()" onmouseleave="hideSmallBag();"
+                 style="display: none;">
                 <div style="display: block">
                     <span class="button_close" onclick="closeSmallBag();">关闭</span>
                 </div>
@@ -270,17 +384,17 @@
 
 <!--轮播图-->
 <div class="swiper-container">
-        <div class="swiper-wrapper">
-           {% for lunbo in lunbos %}
-                <div class="swiper-slide"><img src="{% static lunbo %}" alt=""></div>
-           {% endfor %}
+    <div class="swiper-wrapper">
+        {% for lunbo in lunbos %}
+            <div class="swiper-slide"><img src="{% static lunbo %}" alt=""></div>
+        {% endfor %}
 
-        </div>
-        <!-- Add Pagination -->
-        <div class="swiper-pagination"></div>
-        <!-- Add Arrows -->
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+    <!-- Add Arrows -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
 </div>
 
 <!--楼梯固定窗口-->
@@ -329,7 +443,8 @@
                     <div class="e_item">
                         <a href="">
                             <div class="e_thumbnail_box">
-                                <img src="{% static 'images/nv2.jpg' %}" alt="" style="width: 318px;height: 191px;margin: 0;overflow: hidden">
+                                <img src="{% static 'images/nv2.jpg' %}" alt=""
+                                     style="width: 318px;height: 191px;margin: 0;overflow: hidden">
                                 <div class="e_mouseover">
 
                                 </div>
@@ -347,7 +462,8 @@
                     <div class="e_item">
                         <a href="">
                             <div class="e_thumbnail_box">
-                                <img src="{% static 'images/nv3.jpg' %}" alt="" style="width: 318px;height: 191px;margin: 0;overflow: hidden">
+                                <img src="{% static 'images/nv3.jpg' %}" alt=""
+                                     style="width: 318px;height: 191px;margin: 0;overflow: hidden">
                                 <div class="e_mouseover">
 
                                 </div>
@@ -365,7 +481,8 @@
                     <div class="e_item">
                         <a href="">
                             <div class="e_thumbnail_box">
-                                <img src="{% static 'images/nv4.jpg' %}" alt="" style="width: 318px;height: 191px;margin: 0;overflow: hidden">
+                                <img src="{% static 'images/nv4.jpg' %}" alt=""
+                                     style="width: 318px;height: 191px;margin: 0;overflow: hidden">
                                 <div class="e_mouseover">
 
                                 </div>
@@ -383,7 +500,8 @@
                     <div class="e_item">
                         <a href="">
                             <div class="e_thumbnail_box">
-                                <img src="{% static 'images/nv5.jpg' %}" alt="" style="width: 318px;height: 191px;margin: 0;overflow: hidden">
+                                <img src="{% static 'images/nv5.jpg' %}" alt=""
+                                     style="width: 318px;height: 191px;margin: 0;overflow: hidden">
                                 <div class="e_mouseover">
 
                                 </div>
@@ -401,7 +519,8 @@
                     <div class="e_item">
                         <a href="#">
                             <div class="e_thumbnail_box">
-                                <img src="{% static 'images/nv6.jpg' %}" alt="" style="width: 318px;height: 191px;margin: 0;overflow: hidden">
+                                <img src="{% static 'images/nv6.jpg' %}" alt=""
+                                     style="width: 318px;height: 191px;margin: 0;overflow: hidden">
                                 <div class="e_mouseover">
 
                                 </div>
@@ -419,7 +538,8 @@
                     <div class="e_item">
                         <a href="">
                             <div class="e_thumbnail_box">
-                                <img src="{% static 'images/nv7.jpg' %}" alt="" style="width: 318px;height: 191px;margin: 0;overflow: hidden">
+                                <img src="{% static 'images/nv7.jpg' %}" alt=""
+                                     style="width: 318px;height: 191px;margin: 0;overflow: hidden">
                                 <div class="e_mouseover">
 
                                 </div>
@@ -451,7 +571,8 @@
                     <div class="e_item">
                         <a href="">
                             <div class="e_thumbnail_box">
-                                <img src="{% static 'images/jia1.jpg' %}" alt="" style="width: 318px;height: 191px;margin: 0;overflow: hidden">
+                                <img src="{% static 'images/jia1.jpg' %}" alt=""
+                                     style="width: 318px;height: 191px;margin: 0;overflow: hidden">
                                 <div class="e_mouseover">
 
                                 </div>
@@ -469,7 +590,8 @@
                     <div class="e_item">
                         <a href="">
                             <div class="e_thumbnail_box">
-                                <img src="{% static 'images/jia2.jpg' %}" alt="" style="width: 318px;height: 191px;margin: 0;overflow: hidden">
+                                <img src="{% static 'images/jia2.jpg' %}" alt=""
+                                     style="width: 318px;height: 191px;margin: 0;overflow: hidden">
                                 <div class="e_mouseover">
 
                                 </div>
@@ -487,7 +609,8 @@
                     <div class="e_item">
                         <a href="">
                             <div class="e_thumbnail_box">
-                                <img src="{% static 'images/jia3.jpg' %}" alt="" style="width: 318px;height: 191px;margin: 0;overflow: hidden">
+                                <img src="{% static 'images/jia3.jpg' %}" alt=""
+                                     style="width: 318px;height: 191px;margin: 0;overflow: hidden">
                                 <div class="e_mouseover">
 
                                 </div>
@@ -505,7 +628,8 @@
                     <div class="e_item">
                         <a href="">
                             <div class="e_thumbnail_box">
-                                <img src="{% static 'images/jia4.jpg' %}" alt="" style="width: 318px;height: 191px;margin: 0;overflow: hidden">
+                                <img src="{% static 'images/jia4.jpg' %}" alt=""
+                                     style="width: 318px;height: 191px;margin: 0;overflow: hidden">
                                 <div class="e_mouseover">
 
                                 </div>
@@ -523,7 +647,8 @@
                     <div class="e_item">
                         <a href="">
                             <div class="e_thumbnail_box">
-                                <img src="{% static 'images/jia2.jpg' %}" alt="" style="width: 318px;height: 191px;margin: 0;overflow: hidden">
+                                <img src="{% static 'images/jia2.jpg' %}" alt=""
+                                     style="width: 318px;height: 191px;margin: 0;overflow: hidden">
                                 <div class="e_mouseover">
 
                                 </div>
@@ -541,7 +666,8 @@
                     <div class="e_item">
                         <a href="">
                             <div class="e_thumbnail_box">
-                                <img src="{% static 'images/jia2.jpg' %}" alt="" style="width: 318px;height: 191px;margin: 0;overflow: hidden">
+                                <img src="{% static 'images/jia2.jpg' %}" alt=""
+                                     style="width: 318px;height: 191px;margin: 0;overflow: hidden">
                                 <div class="e_mouseover">
 
                                 </div>
@@ -559,7 +685,8 @@
                     <div class="e_item">
                         <a href="">
                             <div class="e_thumbnail_box">
-                                <img src="{% static 'images/jia2.jpg' %}" alt="" style="width: 318px;height: 191px;margin: 0;overflow: hidden">
+                                <img src="{% static 'images/jia2.jpg' %}" alt=""
+                                     style="width: 318px;height: 191px;margin: 0;overflow: hidden">
                                 <div class="e_mouseover">
 
                                 </div>
@@ -577,7 +704,8 @@
                     <div class="e_item">
                         <a href="">
                             <div class="e_thumbnail_box">
-                                <img src="{% static 'images/jia2.jpg' %}" alt="" style="width: 318px;height: 191px;margin: 0;overflow: hidden">
+                                <img src="{% static 'images/jia2.jpg' %}" alt=""
+                                     style="width: 318px;height: 191px;margin: 0;overflow: hidden">
                                 <div class="e_mouseover">
 
                                 </div>
@@ -595,7 +723,8 @@
                     <div class="e_item">
                         <a href="">
                             <div class="e_thumbnail_box">
-                                <img src="{% static 'images/jia2.jpg' %}" alt="" style="width: 318px;height: 191px;margin: 0;overflow: hidden">
+                                <img src="{% static 'images/jia2.jpg' %}" alt=""
+                                     style="width: 318px;height: 191px;margin: 0;overflow: hidden">
                                 <div class="e_mouseover">
 
                                 </div>
@@ -613,7 +742,8 @@
                     <div class="e_item">
                         <a href="">
                             <div class="e_thumbnail_box">
-                                <img src="{% static 'images/nv3.jpg' %}" alt="" style="width: 318px;height: 191px;margin: 0;overflow: hidden">
+                                <img src="{% static 'images/nv3.jpg' %}" alt=""
+                                     style="width: 318px;height: 191px;margin: 0;overflow: hidden">
                                 <div class="e_mouseover">
 
                                 </div>
@@ -631,7 +761,8 @@
                     <div class="e_item">
                         <a href="">
                             <div class="e_thumbnail_box">
-                                <img src="{% static 'images/nv4.jpg' %}" alt="" style="width: 318px;height: 191px;margin: 0;overflow: hidden">
+                                <img src="{% static 'images/nv4.jpg' %}" alt=""
+                                     style="width: 318px;height: 191px;margin: 0;overflow: hidden">
                                 <div class="e_mouseover">
 
                                 </div>
@@ -649,7 +780,8 @@
                     <div class="e_item">
                         <a href="">
                             <div class="e_thumbnail_box">
-                                <img src="{% static 'images/nv5.jpg' %}" alt="" style="width: 318px;height: 191px;margin: 0;overflow: hidden">
+                                <img src="{% static 'images/nv5.jpg' %}" alt=""
+                                     style="width: 318px;height: 191px;margin: 0;overflow: hidden">
                                 <div class="e_mouseover">
 
                                 </div>
@@ -667,7 +799,8 @@
                     <div class="e_item">
                         <a href="">
                             <div class="e_thumbnail_box">
-                                <img src="{% static 'images/nv6.jpg' %}" alt="" style="width: 318px;height: 191px;margin: 0;overflow: hidden">
+                                <img src="{% static 'images/nv6.jpg' %}" alt=""
+                                     style="width: 318px;height: 191px;margin: 0;overflow: hidden">
                                 <div class="e_mouseover">
 
                                 </div>
@@ -685,7 +818,8 @@
                     <div class="e_item">
                         <a href="">
                             <div class="e_thumbnail_box">
-                                <img src="{% static 'images/nv7.jpg' %}" alt="" style="width: 318px;height: 191px;margin: 0;overflow: hidden">
+                                <img src="{% static 'images/nv7.jpg' %}" alt=""
+                                     style="width: 318px;height: 191px;margin: 0;overflow: hidden">
                                 <div class="e_mouseover">
 
                                 </div>
@@ -716,7 +850,8 @@
                     <div class="e_item">
                         <a href="">
                             <div class="e_thumbnail_box">
-                                <img src="{% static 'images/mei1.jpg' %}" alt="" style="width: 318px;height: 191px;margin: 0;overflow: hidden">
+                                <img src="{% static 'images/mei1.jpg' %}" alt=""
+                                     style="width: 318px;height: 191px;margin: 0;overflow: hidden">
                                 <div class="e_mouseover">
 
                                 </div>
@@ -734,7 +869,8 @@
                     <div class="e_item">
                         <a href="">
                             <div class="e_thumbnail_box">
-                                <img src="{% static 'images/mei2.jpg' %}" alt="" style="width: 318px;height: 191px;margin: 0;overflow: hidden">
+                                <img src="{% static 'images/mei2.jpg' %}" alt=""
+                                     style="width: 318px;height: 191px;margin: 0;overflow: hidden">
                                 <div class="e_mouseover">
 
                                 </div>
@@ -752,7 +888,8 @@
                     <div class="e_item">
                         <a href="">
                             <div class="e_thumbnail_box">
-                                <img src="{% static 'images/mei3.jpg' %}" alt="" style="width: 318px;height: 191px;margin: 0;overflow: hidden">
+                                <img src="{% static 'images/mei3.jpg' %}" alt=""
+                                     style="width: 318px;height: 191px;margin: 0;overflow: hidden">
                                 <div class="e_mouseover">
 
                                 </div>
@@ -770,7 +907,8 @@
                     <div class="e_item">
                         <a href="">
                             <div class="e_thumbnail_box">
-                                <img src="{% static 'images/mei4.jpg' %}" alt="" style="width: 318px;height: 191px;margin: 0;overflow: hidden">
+                                <img src="{% static 'images/mei4.jpg' %}" alt=""
+                                     style="width: 318px;height: 191px;margin: 0;overflow: hidden">
                                 <div class="e_mouseover">
 
                                 </div>
@@ -788,7 +926,8 @@
                     <div class="e_item">
                         <a href="">
                             <div class="e_thumbnail_box">
-                                <img src="{% static 'images/mei5.jpg' %}" alt="" style="width: 318px;height: 191px;margin: 0;overflow: hidden">
+                                <img src="{% static 'images/mei5.jpg' %}" alt=""
+                                     style="width: 318px;height: 191px;margin: 0;overflow: hidden">
                                 <div class="e_mouseover">
 
                                 </div>
@@ -806,7 +945,8 @@
                     <div class="e_item">
                         <a href="">
                             <div class="e_thumbnail_box">
-                                <img src="{% static 'images/mei6.jpg' %}" alt="" style="width: 318px;height: 191px;margin: 0;overflow: hidden">
+                                <img src="{% static 'images/mei6.jpg' %}" alt=""
+                                     style="width: 318px;height: 191px;margin: 0;overflow: hidden">
                                 <div class="e_mouseover">
 
                                 </div>
@@ -824,7 +964,8 @@
                     <div class="e_item">
                         <a href="">
                             <div class="e_thumbnail_box">
-                                <img src="{% static 'images/mei7.jpg' %}" alt="" style="width: 318px;height: 191px;margin: 0;overflow: hidden">
+                                <img src="{% static 'images/mei7.jpg' %}" alt=""
+                                     style="width: 318px;height: 191px;margin: 0;overflow: hidden">
                                 <div class="e_mouseover">
 
                                 </div>
@@ -855,7 +996,8 @@
                     <div class="e_item">
                         <a href="">
                             <div class="e_thumbnail_box">
-                                <img src="{% static 'images/nan1.jpg' %}" alt="" style="width: 318px;height: 191px;margin: 0;overflow: hidden">
+                                <img src="{% static 'images/nan1.jpg' %}" alt=""
+                                     style="width: 318px;height: 191px;margin: 0;overflow: hidden">
                                 <div class="e_mouseover">
 
                                 </div>
@@ -873,7 +1015,8 @@
                     <div class="e_item">
                         <a href="">
                             <div class="e_thumbnail_box">
-                                <img src="{% static 'images/nan2.jpg' %}" alt="" style="width: 318px;height: 191px;margin: 0;overflow: hidden">
+                                <img src="{% static 'images/nan2.jpg' %}" alt=""
+                                     style="width: 318px;height: 191px;margin: 0;overflow: hidden">
                                 <div class="e_mouseover">
 
                                 </div>
@@ -891,7 +1034,8 @@
                     <div class="e_item">
                         <a href="">
                             <div class="e_thumbnail_box">
-                                <img src="{% static 'images/nan3.jpg' %}" alt="" style="width: 318px;height: 191px;margin: 0;overflow: hidden">
+                                <img src="{% static 'images/nan3.jpg' %}" alt=""
+                                     style="width: 318px;height: 191px;margin: 0;overflow: hidden">
                                 <div class="e_mouseover">
 
                                 </div>
@@ -909,7 +1053,8 @@
                     <div class="e_item">
                         <a href="">
                             <div class="e_thumbnail_box">
-                                <img src="{% static 'images/nan4.jpg' %}" alt="" style="width: 318px;height: 191px;margin: 0;overflow: hidden">
+                                <img src="{% static 'images/nan4.jpg' %}" alt=""
+                                     style="width: 318px;height: 191px;margin: 0;overflow: hidden">
                                 <div class="e_mouseover">
 
                                 </div>
@@ -927,7 +1072,8 @@
                     <div class="e_item">
                         <a href="">
                             <div class="e_thumbnail_box">
-                                <img src="{% static 'images/nan5.jpg' %}" alt="" style="width: 318px;height: 191px;margin: 0;overflow: hidden">
+                                <img src="{% static 'images/nan5.jpg' %}" alt=""
+                                     style="width: 318px;height: 191px;margin: 0;overflow: hidden">
                                 <div class="e_mouseover">
 
                                 </div>
@@ -945,7 +1091,8 @@
                     <div class="e_item">
                         <a href="">
                             <div class="e_thumbnail_box">
-                                <img src="{% static 'images/nan6.jpg' %}" alt="" style="width: 318px;height: 191px;margin: 0;overflow: hidden">
+                                <img src="{% static 'images/nan6.jpg' %}" alt=""
+                                     style="width: 318px;height: 191px;margin: 0;overflow: hidden">
                                 <div class="e_mouseover">
 
                                 </div>
@@ -977,7 +1124,8 @@
                     <div class="e_item">
                         <a href="">
                             <div class="e_thumbnail_box">
-                                <img src="{% static 'images/nvshi1.jpg' %}" alt="" style="width: 318px;height: 191px;margin: 0;overflow: hidden">
+                                <img src="{% static 'images/nvshi1.jpg' %}" alt=""
+                                     style="width: 318px;height: 191px;margin: 0;overflow: hidden">
                                 <div class="e_mouseover">
 
                                 </div>
@@ -995,7 +1143,8 @@
                     <div class="e_item">
                         <a href="">
                             <div class="e_thumbnail_box">
-                                <img src="{% static 'images/nvshi2.jpg' %}" alt="" style="width: 318px;height: 191px;margin: 0;overflow: hidden">
+                                <img src="{% static 'images/nvshi2.jpg' %}" alt=""
+                                     style="width: 318px;height: 191px;margin: 0;overflow: hidden">
                                 <div class="e_mouseover">
 
                                 </div>
@@ -1013,7 +1162,8 @@
                     <div class="e_item">
                         <a href="">
                             <div class="e_thumbnail_box">
-                                <img src="{% static 'images/nvshi3.jpg' %}" alt="" style="width: 318px;height: 191px;margin: 0;overflow: hidden">
+                                <img src="{% static 'images/nvshi3.jpg' %}" alt=""
+                                     style="width: 318px;height: 191px;margin: 0;overflow: hidden">
                                 <div class="e_mouseover">
 
                                 </div>
@@ -1031,7 +1181,8 @@
                     <div class="e_item">
                         <a href="">
                             <div class="e_thumbnail_box">
-                                <img src="{% static 'images/nvshi4.jpg' %}" alt="" style="width: 318px;height: 191px;margin: 0;overflow: hidden">
+                                <img src="{% static 'images/nvshi4.jpg' %}" alt=""
+                                     style="width: 318px;height: 191px;margin: 0;overflow: hidden">
                                 <div class="e_mouseover">
 
                                 </div>
@@ -1049,7 +1200,8 @@
                     <div class="e_item">
                         <a href="">
                             <div class="e_thumbnail_box">
-                                <img src="{% static 'images/nan2.jpg' %}" alt="" style="width: 318px;height: 191px;margin: 0;overflow: hidden">
+                                <img src="{% static 'images/nan2.jpg' %}" alt=""
+                                     style="width: 318px;height: 191px;margin: 0;overflow: hidden">
                                 <div class="e_mouseover">
 
                                 </div>
@@ -1067,7 +1219,8 @@
                     <div class="e_item">
                         <a href="">
                             <div class="e_thumbnail_box">
-                                <img src="{% static 'images/nan3.jpg' %}" alt="" style="width: 318px;height: 191px;margin: 0;overflow: hidden">
+                                <img src="{% static 'images/nan3.jpg' %}" alt=""
+                                     style="width: 318px;height: 191px;margin: 0;overflow: hidden">
                                 <div class="e_mouseover">
 
                                 </div>
@@ -1085,7 +1238,8 @@
                     <div class="e_item">
                         <a href="">
                             <div class="e_thumbnail_box">
-                                <img src="{% static 'images/nan4.jpg' %}" alt="" style="width: 318px;height: 191px;margin: 0;overflow: hidden">
+                                <img src="{% static 'images/nan4.jpg' %}" alt=""
+                                     style="width: 318px;height: 191px;margin: 0;overflow: hidden">
                                 <div class="e_mouseover">
 
                                 </div>
@@ -1103,7 +1257,8 @@
                     <div class="e_item">
                         <a href="">
                             <div class="e_thumbnail_box">
-                                <img src="{% static 'images/nan5.jpg' %}" alt="" style="width: 318px;height: 191px;margin: 0;overflow: hidden">
+                                <img src="{% static 'images/nan5.jpg' %}" alt=""
+                                     style="width: 318px;height: 191px;margin: 0;overflow: hidden">
                                 <div class="e_mouseover">
 
                                 </div>
@@ -1121,7 +1276,8 @@
                     <div class="e_item">
                         <a href="">
                             <div class="e_thumbnail_box">
-                                <img src="{% static 'images/nan6.jpg' %}" alt="" style="width: 318px;height: 191px;margin: 0;overflow: hidden">
+                                <img src="{% static 'images/nan6.jpg' %}" alt=""
+                                     style="width: 318px;height: 191px;margin: 0;overflow: hidden">
                                 <div class="e_mouseover">
 
                                 </div>
@@ -1153,7 +1309,8 @@
                     <div class="e_item">
                         <a href="">
                             <div class="e_thumbnail_box">
-                                <img src="{% static 'images/junv1.jpg' %}" alt="" style="width: 318px;height: 191px;margin: 0;overflow: hidden">
+                                <img src="{% static 'images/junv1.jpg' %}" alt=""
+                                     style="width: 318px;height: 191px;margin: 0;overflow: hidden">
                                 <div class="e_mouseover">
 
                                 </div>
@@ -1171,7 +1328,8 @@
                     <div class="e_item">
                         <a href="">
                             <div class="e_thumbnail_box">
-                                <img src="{% static 'images/junv2.jpg' %}" alt="" style="width: 318px;height: 191px;margin: 0;overflow: hidden">
+                                <img src="{% static 'images/junv2.jpg' %}" alt=""
+                                     style="width: 318px;height: 191px;margin: 0;overflow: hidden">
                                 <div class="e_mouseover">
 
                                 </div>
@@ -1189,7 +1347,8 @@
                     <div class="e_item">
                         <a href="">
                             <div class="e_thumbnail_box">
-                                <img src="{% static 'images/junv3.jpg' %}" alt="" style="width: 318px;height: 191px;margin: 0;overflow: hidden">
+                                <img src="{% static 'images/junv3.jpg' %}" alt=""
+                                     style="width: 318px;height: 191px;margin: 0;overflow: hidden">
                                 <div class="e_mouseover">
 
                                 </div>
@@ -1207,7 +1366,8 @@
                     <div class="e_item">
                         <a href="">
                             <div class="e_thumbnail_box">
-                                <img src="{% static 'images/junv4.jpg' %}" alt="" style="width: 318px;height: 191px;margin: 0;overflow: hidden">
+                                <img src="{% static 'images/junv4.jpg' %}" alt=""
+                                     style="width: 318px;height: 191px;margin: 0;overflow: hidden">
                                 <div class="e_mouseover">
 
                                 </div>
@@ -1225,7 +1385,8 @@
                     <div class="e_item">
                         <a href="">
                             <div class="e_thumbnail_box">
-                                <img src="{% static 'images/junv5.jpg' %}" alt="" style="width: 318px;height: 191px;margin: 0;overflow: hidden">
+                                <img src="{% static 'images/junv5.jpg' %}" alt=""
+                                     style="width: 318px;height: 191px;margin: 0;overflow: hidden">
                                 <div class="e_mouseover">
 
                                 </div>
@@ -1243,7 +1404,8 @@
                     <div class="e_item">
                         <a href="">
                             <div class="e_thumbnail_box">
-                                <img src="{% static 'images/junv6.jpg' %}" alt="" style="width: 318px;height: 191px;margin: 0;overflow: hidden">
+                                <img src="{% static 'images/junv6.jpg' %}" alt=""
+                                     style="width: 318px;height: 191px;margin: 0;overflow: hidden">
                                 <div class="e_mouseover">
 
                                 </div>
@@ -1261,7 +1423,8 @@
                     <div class="e_item">
                         <a href="">
                             <div class="e_thumbnail_box">
-                                <img src="{% static 'images/junv7.jpg' %}" alt="" style="width: 318px;height: 191px;margin: 0;overflow: hidden">
+                                <img src="{% static 'images/junv7.jpg' %}" alt=""
+                                     style="width: 318px;height: 191px;margin: 0;overflow: hidden">
                                 <div class="e_mouseover">
 
                                 </div>
@@ -1279,7 +1442,8 @@
                     <div class="e_item">
                         <a href="">
                             <div class="e_thumbnail_box">
-                                <img src="{% static 'images/junv8.jpg' %}" alt="" style="width: 318px;height: 191px;margin: 0;overflow: hidden">
+                                <img src="{% static 'images/junv8.jpg' %}" alt=""
+                                     style="width: 318px;height: 191px;margin: 0;overflow: hidden">
                                 <div class="e_mouseover">
 
                                 </div>
@@ -1297,7 +1461,8 @@
                     <div class="e_item">
                         <a href="">
                             <div class="e_thumbnail_box">
-                                <img src="{% static 'images/junv9.jpg' %}" alt="" style="width: 318px;height: 191px;margin: 0;overflow: hidden">
+                                <img src="{% static 'images/junv9.jpg' %}" alt=""
+                                     style="width: 318px;height: 191px;margin: 0;overflow: hidden">
                                 <div class="e_mouseover">
 
                                 </div>
@@ -1315,7 +1480,8 @@
                     <div class="e_item">
                         <a href="">
                             <div class="e_thumbnail_box">
-                                <img src="{% static 'images/junv10.jpg' %}" alt="" style="width: 318px;height: 191px;margin: 0;overflow: hidden">
+                                <img src="{% static 'images/junv10.jpg' %}" alt=""
+                                     style="width: 318px;height: 191px;margin: 0;overflow: hidden">
                                 <div class="e_mouseover">
 
                                 </div>
@@ -1333,7 +1499,8 @@
                     <div class="e_item">
                         <a href="">
                             <div class="e_thumbnail_box">
-                                <img src="{% static 'images/junv11.jpg' %}" alt="" style="width: 318px;height: 191px;margin: 0;overflow: hidden">
+                                <img src="{% static 'images/junv11.jpg' %}" alt=""
+                                     style="width: 318px;height: 191px;margin: 0;overflow: hidden">
                                 <div class="e_mouseover">
 
                                 </div>
@@ -1351,7 +1518,8 @@
                     <div class="e_item">
                         <a href="">
                             <div class="e_thumbnail_box">
-                                <img src="{% static 'images/junv12.jpg' %}" alt="" style="width: 318px;height: 191px;margin: 0;overflow: hidden">
+                                <img src="{% static 'images/junv12.jpg' %}" alt=""
+                                     style="width: 318px;height: 191px;margin: 0;overflow: hidden">
                                 <div class="e_mouseover">
 
                                 </div>
@@ -1363,308 +1531,324 @@
                                 <span class="e_discount">
                                     <em>1.2</em>折起
                                 </span>
-                            </div>                             <div class="e_mouseover">
+                            </div>
+                            <div class="e_mouseover">
 
-                                </div>
-                            </a></div><a href="">
-                            <div class="e_info">
+                            </div>
+                        </a></div>
+                    <a href="">
+                        <div class="e_info">
                                 <span class="e_name">
                                     不惧秋凉，女士配饰家居服专场
                                 </span>
-                                <span class="e_discount">
+                            <span class="e_discount">
                                     <em>0.5</em>折起
                                 </span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="e_item">
-                        <a href="">
-                            <div class="e_thumbnail_box">
-                                <img src="{% static 'images/nv7.jpg' %}" alt="" style="width: 318px;height: 191px;margin: 0;overflow: hidden">
-                                <div class="e_mouseover">
+                        </div>
+                    </a>
+                </div>
+                <div class="e_item">
+                    <a href="">
+                        <div class="e_thumbnail_box">
+                            <img src="{% static 'images/nv7.jpg' %}" alt=""
+                                 style="width: 318px;height: 191px;margin: 0;overflow: hidden">
+                            <div class="e_mouseover">
 
-                                </div>
                             </div>
-                            <div class="e_info">
+                        </div>
+                        <div class="e_info">
                                 <span class="e_name">
                                     不惧秋凉，女士时尚珠宝手表专场
                                 </span>
-                                <span class="e_discount">
+                            <span class="e_discount">
                                     <em>0.3</em>折起
                                 </span>
-                            </div>
-                        </a>
-                    </div>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-    <!--F7-->
-    <div id="F7" class="floor">
+<!--F7-->
+<div id="F7" class="floor">
+    <div class="e_list_box">
+        <h2>
+            <span>10/7 开启买买买模式 2件8折 3件7折 4件6折</span>
+        </h2>
         <div class="e_list_box">
-            <h2>
-                <span>10/7 开启买买买模式 2件8折 3件7折 4件6折</span>
-            </h2>
-            <div class="e_list_box">
-                <div class="e_list clearfix">
-                    <div class="e_item">
-                        <a href="">
-                            <div class="e_thumbnail_box">
-                                <img src="{% static 'images/junan1.jpg' %}" alt="" style="width: 318px;height: 191px;margin: 0;overflow: hidden">
-                                <div class="e_mouseover">
+            <div class="e_list clearfix">
+                <div class="e_item">
+                    <a href="">
+                        <div class="e_thumbnail_box">
+                            <img src="{% static 'images/junan1.jpg' %}" alt=""
+                                 style="width: 318px;height: 191px;margin: 0;overflow: hidden">
+                            <div class="e_mouseover">
 
-                                </div>
                             </div>
-                            <div class="e_info">
+                        </div>
+                        <div class="e_info">
                                 <span class="e_name">
                                     钜惠专场，女士奢华上装
                                 </span>
-                                <span class="e_discount">
+                            <span class="e_discount">
                                     <em>0.3</em>折起
                                 </span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="e_item">
-                        <a href="">
-                            <div class="e_thumbnail_box">
-                                <img src="{% static 'images/junan2.jpg' %}" alt="" style="width: 318px;height: 191px;margin: 0;overflow: hidden">
-                                <div class="e_mouseover">
+                        </div>
+                    </a>
+                </div>
+                <div class="e_item">
+                    <a href="">
+                        <div class="e_thumbnail_box">
+                            <img src="{% static 'images/junan2.jpg' %}" alt=""
+                                 style="width: 318px;height: 191px;margin: 0;overflow: hidden">
+                            <div class="e_mouseover">
 
-                                </div>
                             </div>
-                            <div class="e_info">
+                        </div>
+                        <div class="e_info">
                                 <span class="e_name">
                                     钜惠专场，女士时尚裙装连衣裙
                                 </span>
-                                <span class="e_discount">
+                            <span class="e_discount">
                                     <em>0.3</em>折起
                                 </span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="e_item">
-                        <a href="">
-                            <div class="e_thumbnail_box">
-                                <img src="{% static 'images/junan3.jpg' %}" alt="" style="width: 318px;height: 191px;margin: 0;overflow: hidden">
-                                <div class="e_mouseover">
+                        </div>
+                    </a>
+                </div>
+                <div class="e_item">
+                    <a href="">
+                        <div class="e_thumbnail_box">
+                            <img src="{% static 'images/junan3.jpg' %}" alt=""
+                                 style="width: 318px;height: 191px;margin: 0;overflow: hidden">
+                            <div class="e_mouseover">
 
-                                </div>
                             </div>
-                            <div class="e_info">
+                        </div>
+                        <div class="e_info">
                                 <span class="e_name">
                                     钜惠专场，女士时尚裤裙
                                 </span>
-                                <span class="e_discount">
+                            <span class="e_discount">
                                     <em>0.3</em>折起
                                 </span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="e_item">
-                        <a href="">
-                            <div class="e_thumbnail_box">
-                                <img src="{% static 'images/junan4.jpg' %}" alt="" style="width: 318px;height: 191px;margin: 0;overflow: hidden">
-                                <div class="e_mouseover">
+                        </div>
+                    </a>
+                </div>
+                <div class="e_item">
+                    <a href="">
+                        <div class="e_thumbnail_box">
+                            <img src="{% static 'images/junan4.jpg' %}" alt=""
+                                 style="width: 318px;height: 191px;margin: 0;overflow: hidden">
+                            <div class="e_mouseover">
 
-                                </div>
                             </div>
-                            <div class="e_info">
+                        </div>
+                        <div class="e_info">
                                 <span class="e_name">
                                     不惧秋凉，羊毛暖芯
                                 </span>
-                                <span class="e_discount">
+                            <span class="e_discount">
                                     <em>1.5</em>折起
                                 </span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="e_item">
-                        <a href="">
-                            <div class="e_thumbnail_box">
-                                <img src="{% static 'images/junan5.jpg' %}" alt="" style="width: 318px;height: 191px;margin: 0;overflow: hidden">
-                                <div class="e_mouseover">
+                        </div>
+                    </a>
+                </div>
+                <div class="e_item">
+                    <a href="">
+                        <div class="e_thumbnail_box">
+                            <img src="{% static 'images/junan5.jpg' %}" alt=""
+                                 style="width: 318px;height: 191px;margin: 0;overflow: hidden">
+                            <div class="e_mouseover">
 
-                                </div>
                             </div>
-                            <div class="e_info">
+                        </div>
+                        <div class="e_info">
                                 <span class="e_name">
                                     不惧秋凉，床品家居
                                 </span>
-                                <span class="e_discount">
+                            <span class="e_discount">
                                     <em>1.5</em>折起
                                 </span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="e_item">
-                        <a href="">
-                            <div class="e_thumbnail_box">
-                                <img src="{% static 'images/junan6.jpg' %}" alt="" style="width: 318px;height: 191px;margin: 0;overflow: hidden">
-                                <div class="e_mouseover">
+                        </div>
+                    </a>
+                </div>
+                <div class="e_item">
+                    <a href="">
+                        <div class="e_thumbnail_box">
+                            <img src="{% static 'images/junan6.jpg' %}" alt=""
+                                 style="width: 318px;height: 191px;margin: 0;overflow: hidden">
+                            <div class="e_mouseover">
 
-                                </div>
                             </div>
-                            <div class="e_info">
+                        </div>
+                        <div class="e_info">
                                 <span class="e_name">
                                     不惧秋凉，床品家居
                                 </span>
-                                <span class="e_discount">
+                            <span class="e_discount">
                                     <em>1.5</em>折起
                                 </span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="e_item">
-                        <a href="">
-                            <div class="e_thumbnail_box">
-                                <img src="{% static 'images/junan7.jpg' %}" alt="" style="width: 318px;height: 191px;margin: 0;overflow: hidden">
-                                <div class="e_mouseover">
+                        </div>
+                    </a>
+                </div>
+                <div class="e_item">
+                    <a href="">
+                        <div class="e_thumbnail_box">
+                            <img src="{% static 'images/junan7.jpg' %}" alt=""
+                                 style="width: 318px;height: 191px;margin: 0;overflow: hidden">
+                            <div class="e_mouseover">
 
-                                </div>
                             </div>
-                            <div class="e_info">
+                        </div>
+                        <div class="e_info">
                                 <span class="e_name">
                                     不惧秋凉，床品家居
                                 </span>
-                                <span class="e_discount">
+                            <span class="e_discount">
                                     <em>1.5</em>折起
                                 </span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="e_item">
-                        <a href="">
-                            <div class="e_thumbnail_box">
-                                <img src="{% static 'images/junan8.jpg' %}" alt="" style="width: 318px;height: 191px;margin: 0;overflow: hidden">
-                                <div class="e_mouseover">
+                        </div>
+                    </a>
+                </div>
+                <div class="e_item">
+                    <a href="">
+                        <div class="e_thumbnail_box">
+                            <img src="{% static 'images/junan8.jpg' %}" alt=""
+                                 style="width: 318px;height: 191px;margin: 0;overflow: hidden">
+                            <div class="e_mouseover">
 
-                                </div>
                             </div>
-                            <div class="e_info">
+                        </div>
+                        <div class="e_info">
                                 <span class="e_name">
                                     不惧秋凉，床品家居
                                 </span>
-                                <span class="e_discount">
+                            <span class="e_discount">
                                     <em>1.5</em>折起
                                 </span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="e_item">
-                        <a href="">
-                            <div class="e_thumbnail_box">
-                                <img src="{% static 'images/junan9.jpg' %}" alt="" style="width: 318px;height: 191px;margin: 0;overflow: hidden">
-                                <div class="e_mouseover">
+                        </div>
+                    </a>
+                </div>
+                <div class="e_item">
+                    <a href="">
+                        <div class="e_thumbnail_box">
+                            <img src="{% static 'images/junan9.jpg' %}" alt=""
+                                 style="width: 318px;height: 191px;margin: 0;overflow: hidden">
+                            <div class="e_mouseover">
 
-                                </div>
                             </div>
-                            <div class="e_info">
+                        </div>
+                        <div class="e_info">
                                 <span class="e_name">
                                     不惧秋凉，床品家居
                                 </span>
-                                <span class="e_discount">
+                            <span class="e_discount">
                                     <em>1.5</em>折起
                                 </span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="e_item">
-                        <a href="">
-                            <div class="e_thumbnail_box">
-                                <img src="{% static 'images/junan10.jpg' %}" alt="" style="width: 318px;height: 191px;margin: 0;overflow: hidden">
-                                <div class="e_mouseover">
+                        </div>
+                    </a>
+                </div>
+                <div class="e_item">
+                    <a href="">
+                        <div class="e_thumbnail_box">
+                            <img src="{% static 'images/junan10.jpg' %}" alt=""
+                                 style="width: 318px;height: 191px;margin: 0;overflow: hidden">
+                            <div class="e_mouseover">
 
-                                </div>
                             </div>
-                            <div class="e_info">
+                        </div>
+                        <div class="e_info">
                                 <span class="e_name">
                                     不惧秋凉，女士时尚下装专场
                                 </span>
-                                <span class="e_discount">
+                            <span class="e_discount">
                                     <em>0.5</em>折起
                                 </span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="e_item">
-                        <a href="">
-                            <div class="e_thumbnail_box">
-                                <img src="{% static 'images/junan11.jpg' %}" alt="" style="width: 318px;height: 191px;margin: 0;overflow: hidden">
-                                <div class="e_mouseover">
+                        </div>
+                    </a>
+                </div>
+                <div class="e_item">
+                    <a href="">
+                        <div class="e_thumbnail_box">
+                            <img src="{% static 'images/junan11.jpg' %}" alt=""
+                                 style="width: 318px;height: 191px;margin: 0;overflow: hidden">
+                            <div class="e_mouseover">
 
-                                </div>
                             </div>
-                            <div class="e_info">
+                        </div>
+                        <div class="e_info">
                                 <span class="e_name">
                                     不惧秋凉，女士时尚针织衫专场
                                 </span>
-                                <span class="e_discount">
+                            <span class="e_discount">
                                     <em>0.7</em>折起
                                 </span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="e_item">
-                        <a href="">
-                            <div class="e_thumbnail_box">
-                                <img src="{% static 'images/junan12.jpg' %}" alt="" style="width: 318px;height: 191px;margin: 0;overflow: hidden">
-                                <div class="e_mouseover">
+                        </div>
+                    </a>
+                </div>
+                <div class="e_item">
+                    <a href="">
+                        <div class="e_thumbnail_box">
+                            <img src="{% static 'images/junan12.jpg' %}" alt=""
+                                 style="width: 318px;height: 191px;margin: 0;overflow: hidden">
+                            <div class="e_mouseover">
 
-                                </div>
                             </div>
-                            <div class="e_info">
+                        </div>
+                        <div class="e_info">
                                 <span class="e_name">
                                     不惧秋凉，女士大衣外套专场
                                 </span>
-                                <span class="e_discount">
+                            <span class="e_discount">
                                     <em>1.2</em>折起
                                 </span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="e_item">
-                        <a href="">
-                            <div class="e_thumbnail_box">
-                                <img src="{% static 'images/junan13.jpg' %}" alt="" style="width: 318px;height: 191px;margin: 0;overflow: hidden">
-                                <div class="e_mouseover">
+                        </div>
+                    </a>
+                </div>
+                <div class="e_item">
+                    <a href="">
+                        <div class="e_thumbnail_box">
+                            <img src="{% static 'images/junan13.jpg' %}" alt=""
+                                 style="width: 318px;height: 191px;margin: 0;overflow: hidden">
+                            <div class="e_mouseover">
 
-                                </div>
                             </div>
-                            <div class="e_info">
+                        </div>
+                        <div class="e_info">
                                 <span class="e_name">
                                     不惧秋凉，女士配饰家居服专场
                                 </span>
-                                <span class="e_discount">
+                            <span class="e_discount">
                                     <em>0.5</em>折起
                                 </span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="e_item">
-                        <a href="">
-                            <div class="e_thumbnail_box">
-                                <img src="{% static 'images/junan1.jpg' %}" alt="" style="width: 318px;height: 191px;margin: 0;overflow: hidden">
-                                <div class="e_mouseover">
+                        </div>
+                    </a>
+                </div>
+                <div class="e_item">
+                    <a href="">
+                        <div class="e_thumbnail_box">
+                            <img src="{% static 'images/junan1.jpg' %}" alt=""
+                                 style="width: 318px;height: 191px;margin: 0;overflow: hidden">
+                            <div class="e_mouseover">
 
-                                </div>
                             </div>
-                            <div class="e_info">
+                        </div>
+                        <div class="e_info">
                                 <span class="e_name">
                                     不惧秋凉，女士时尚珠宝手表专场
                                 </span>
-                                <span class="e_discount">
+                            <span class="e_discount">
                                     <em>0.3</em>折起
                                 </span>
-                            </div>
-                        </a>
-                    </div>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
     </div>
-
+</div>
 
 
 <!--中心内容-->
@@ -1688,15 +1872,18 @@
                         <div class="theEventImg">
                             <div class="theMask" style="display:none"></div>
                             <div class="text" style="display: none">
-                                <div class="box" style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
+                                <div class="box"
+                                     style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
                                     <table style="border-collapse: collapse" cellspacing="0" cellpadding="0">
-                                        <tbody><tr>
+                                        <tbody>
+                                        <tr>
                                             <td style="padding: 0 30px;height: 190px;text-align: center;line-height: 22px;width: 260px;">
                                                 <p>购满2件，享8折；满3件，享7折；满4件及以上，享6折</p><br>
                                                 <p>活动4天后结束</p>
                                             </td>
                                         </tr>
-                                    </tbody></table>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                             <div class="DivImg">
@@ -1718,15 +1905,18 @@
                         <div class="theEventImg">
                             <div class="theMask" style="display: none"></div>
                             <div class="text" style="display: none">
-                                <div class="box" style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
+                                <div class="box"
+                                     style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
                                     <table style="border-collapse: collapse" cellspacing="0" cellpadding="0">
-                                        <tbody><tr>
+                                        <tbody>
+                                        <tr>
                                             <td style="padding: 0 30px;height: 190px;text-align: center;line-height: 22px;width: 260px;">
                                                 <p>购满2件，享8折；满3件，享7折；满4件及以上，享6折</p><br>
                                                 <p>活动4天后结束</p>
                                             </td>
                                         </tr>
-                                    </tbody></table>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                             <div class="DivImg">
@@ -1748,15 +1938,18 @@
                         <div class="theEventImg">
                             <div class="theMask" style="display: none"></div>
                             <div class="text" style="display: none">
-                                <div class="box" style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
+                                <div class="box"
+                                     style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
                                     <table style="border-collapse: collapse" cellspacing="0" cellpadding="0">
-                                        <tbody><tr>
+                                        <tbody>
+                                        <tr>
                                             <td style="padding: 0 30px;height: 190px;text-align: center;line-height: 22px;width: 260px;">
                                                 <p>购满2件，享8折；满3件，享7折；满4件及以上，享6折</p><br>
                                                 <p>活动4天后结束</p>
                                             </td>
                                         </tr>
-                                    </tbody></table>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                             <div class="DivImg">
@@ -1778,15 +1971,18 @@
                         <div class="theEventImg">
                             <div class="theMask" style="display: none"></div>
                             <div class="text" style="display: none">
-                                <div class="box" style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
+                                <div class="box"
+                                     style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
                                     <table style="border-collapse: collapse" cellspacing="0" cellpadding="0">
-                                        <tbody><tr>
+                                        <tbody>
+                                        <tr>
                                             <td style="padding: 0 30px;height: 190px;text-align: center;line-height: 22px;width: 260px;">
                                                 <p>购满2件，享8折；满3件，享7折；满4件及以上，享6折</p><br>
                                                 <p>活动4天后结束</p>
                                             </td>
                                         </tr>
-                                    </tbody></table>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                             <div class="DivImg">
@@ -1808,15 +2004,18 @@
                         <div class="theEventImg">
                             <div class="theMask" style="display: none"></div>
                             <div class="text" style="display: none">
-                                <div class="box" style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
+                                <div class="box"
+                                     style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
                                     <table style="border-collapse: collapse" cellspacing="0" cellpadding="0">
-                                        <tbody><tr>
+                                        <tbody>
+                                        <tr>
                                             <td style="padding: 0 30px;height: 190px;text-align: center;line-height: 22px;width: 260px;">
                                                 <p>购满2件，享8折；满3件，享7折；满4件及以上，享6折</p><br>
                                                 <p>活动4天后结束</p>
                                             </td>
                                         </tr>
-                                    </tbody></table>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                             <div class="DivImg">
@@ -1838,15 +2037,18 @@
                         <div class="theEventImg">
                             <div class="theMask" style="display: none"></div>
                             <div class="text" style="display: none">
-                                <div class="box" style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
+                                <div class="box"
+                                     style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
                                     <table style="border-collapse: collapse" cellspacing="0" cellpadding="0">
-                                        <tbody><tr>
+                                        <tbody>
+                                        <tr>
                                             <td style="padding: 0 30px;height: 190px;text-align: center;line-height: 22px;width: 260px;">
                                                 <p>购满2件，享8折；满3件，享7折；满4件及以上，享6折</p><br>
                                                 <p>活动4天后结束</p>
                                             </td>
                                         </tr>
-                                    </tbody></table>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                             <div class="DivImg">
@@ -1868,15 +2070,18 @@
                         <div class="theEventImg">
                             <div class="theMask" style="display: none"></div>
                             <div class="text" style="display: none">
-                                <div class="box" style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
+                                <div class="box"
+                                     style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
                                     <table style="border-collapse: collapse" cellspacing="0" cellpadding="0">
-                                        <tbody><tr>
+                                        <tbody>
+                                        <tr>
                                             <td style="padding: 0 30px;height: 190px;text-align: center;line-height: 22px;width: 260px;">
                                                 <p>购满2件，享8折；满3件，享7折；满4件及以上，享6折</p><br>
                                                 <p>活动4天后结束</p>
                                             </td>
                                         </tr>
-                                    </tbody></table>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                             <div class="DivImg">
@@ -1898,15 +2103,18 @@
                         <div class="theEventImg">
                             <div class="theMask" style="display: none"></div>
                             <div class="text" style="display: none">
-                                <div class="box" style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
+                                <div class="box"
+                                     style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
                                     <table style="border-collapse: collapse" cellspacing="0" cellpadding="0">
-                                        <tbody><tr>
+                                        <tbody>
+                                        <tr>
                                             <td style="padding: 0 30px;height: 190px;text-align: center;line-height: 22px;width: 260px;">
                                                 <p>购满2件，享8折；满3件，享7折；满4件及以上，享6折</p><br>
                                                 <p>活动4天后结束</p>
                                             </td>
                                         </tr>
-                                    </tbody></table>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                             <div class="DivImg">
@@ -1928,15 +2136,18 @@
                         <div class="theEventImg">
                             <div class="theMask" style="display: none"></div>
                             <div class="text" style="display: none">
-                                <div class="box" style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
+                                <div class="box"
+                                     style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
                                     <table style="border-collapse: collapse" cellspacing="0" cellpadding="0">
-                                        <tbody><tr>
+                                        <tbody>
+                                        <tr>
                                             <td style="padding: 0 30px;height: 190px;text-align: center;line-height: 22px;width: 260px;">
                                                 <p>购满2件，享8折；满3件，享7折；满4件及以上，享6折</p><br>
                                                 <p>活动4天后结束</p>
                                             </td>
                                         </tr>
-                                    </tbody></table>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                             <div class="DivImg">
@@ -1958,15 +2169,18 @@
                         <div class="theEventImg">
                             <div class="theMask" style="display: none"></div>
                             <div class="text" style="display: none">
-                                <div class="box" style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
+                                <div class="box"
+                                     style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
                                     <table style="border-collapse: collapse" cellspacing="0" cellpadding="0">
-                                        <tbody><tr>
+                                        <tbody>
+                                        <tr>
                                             <td style="padding: 0 30px;height: 190px;text-align: center;line-height: 22px;width: 260px;">
                                                 <p>购满2件，享8折；满3件，享7折；满4件及以上，享6折</p><br>
                                                 <p>活动4天后结束</p>
                                             </td>
                                         </tr>
-                                    </tbody></table>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                             <div class="DivImg">
@@ -1988,15 +2202,18 @@
                         <div class="theEventImg">
                             <div class="theMask" style="display: none"></div>
                             <div class="text" style="display: none">
-                                <div class="box" style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
+                                <div class="box"
+                                     style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
                                     <table style="border-collapse: collapse" cellspacing="0" cellpadding="0">
-                                        <tbody><tr>
+                                        <tbody>
+                                        <tr>
                                             <td style="padding: 0 30px;height: 190px;text-align: center;line-height: 22px;width: 260px;">
                                                 <p>购满2件，享8折；满3件，享7折；满4件及以上，享6折</p><br>
                                                 <p>活动4天后结束</p>
                                             </td>
                                         </tr>
-                                    </tbody></table>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                             <div class="DivImg">
@@ -2018,15 +2235,18 @@
                         <div class="theEventImg">
                             <div class="theMask" style="display: none"></div>
                             <div class="text" style="display: none">
-                                <div class="box" style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
+                                <div class="box"
+                                     style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
                                     <table style="border-collapse: collapse" cellspacing="0" cellpadding="0">
-                                        <tbody><tr>
+                                        <tbody>
+                                        <tr>
                                             <td style="padding: 0 30px;height: 190px;text-align: center;line-height: 22px;width: 260px;">
                                                 <p>购满2件，享8折；满3件，享7折；满4件及以上，享6折</p><br>
                                                 <p>活动4天后结束</p>
                                             </td>
                                         </tr>
-                                    </tbody></table>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                             <div class="DivImg">
@@ -2048,15 +2268,18 @@
                         <div class="theEventImg">
                             <div class="theMask" style="display: none"></div>
                             <div class="text" style="display: none">
-                                <div class="box" style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
+                                <div class="box"
+                                     style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
                                     <table style="border-collapse: collapse" cellspacing="0" cellpadding="0">
-                                        <tbody><tr>
+                                        <tbody>
+                                        <tr>
                                             <td style="padding: 0 30px;height: 190px;text-align: center;line-height: 22px;width: 260px;">
                                                 <p>购满2件，享8折；满3件，享7折；满4件及以上，享6折</p><br>
                                                 <p>活动4天后结束</p>
                                             </td>
                                         </tr>
-                                    </tbody></table>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                             <div class="DivImg">
@@ -2078,15 +2301,18 @@
                         <div class="theEventImg">
                             <div class="theMask" style="display: none"></div>
                             <div class="text" style="display: none">
-                                <div class="box" style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
+                                <div class="box"
+                                     style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
                                     <table style="border-collapse: collapse" cellspacing="0" cellpadding="0">
-                                        <tbody><tr>
+                                        <tbody>
+                                        <tr>
                                             <td style="padding: 0 30px;height: 190px;text-align: center;line-height: 22px;width: 260px;">
                                                 <p>购满2件，享8折；满3件，享7折；满4件及以上，享6折</p><br>
                                                 <p>活动4天后结束</p>
                                             </td>
                                         </tr>
-                                    </tbody></table>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                             <div class="DivImg">
@@ -2118,15 +2344,18 @@
                         <div class="theEventImg">
                             <div class="theMask" style="display: none"></div>
                             <div class="text" style="display: none">
-                                <div class="box" style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
+                                <div class="box"
+                                     style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
                                     <table style="border-collapse: collapse" cellspacing="0" cellpadding="0">
-                                        <tbody><tr>
+                                        <tbody>
+                                        <tr>
                                             <td style="padding: 0 30px;height: 190px;text-align: center;line-height: 22px;width: 260px;">
                                                 <p>购满2件，享8折；满3件，享7折；满4件及以上，享6折</p><br>
                                                 <p>活动4天后结束</p>
                                             </td>
                                         </tr>
-                                    </tbody></table>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                             <div class="DivImg">
@@ -2148,15 +2377,18 @@
                         <div class="theEventImg">
                             <div class="theMask" style="display: none"></div>
                             <div class="text" style="display: none">
-                                <div class="box" style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
+                                <div class="box"
+                                     style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
                                     <table style="border-collapse: collapse" cellspacing="0" cellpadding="0">
-                                        <tbody><tr>
+                                        <tbody>
+                                        <tr>
                                             <td style="padding: 0 30px;height: 190px;text-align: center;line-height: 22px;width: 260px;">
                                                 <p>购满2件，享8折；满3件，享7折；满4件及以上，享6折</p><br>
                                                 <p>活动4天后结束</p>
                                             </td>
                                         </tr>
-                                    </tbody></table>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                             <div class="DivImg">
@@ -2178,15 +2410,18 @@
                         <div class="theEventImg">
                             <div class="theMask" style="display: none"></div>
                             <div class="text" style="display: none">
-                                <div class="box" style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
+                                <div class="box"
+                                     style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
                                     <table style="border-collapse: collapse" cellspacing="0" cellpadding="0">
-                                        <tbody><tr>
+                                        <tbody>
+                                        <tr>
                                             <td style="padding: 0 30px;height: 190px;text-align: center;line-height: 22px;width: 260px;">
                                                 <p>购满2件，享8折；满3件，享7折；满4件及以上，享6折</p><br>
                                                 <p>活动4天后结束</p>
                                             </td>
                                         </tr>
-                                    </tbody></table>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                             <div class="DivImg">
@@ -2208,15 +2443,18 @@
                         <div class="theEventImg">
                             <div class="theMask" style="display: none"></div>
                             <div class="text" style="display: none">
-                                <div class="box" style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
+                                <div class="box"
+                                     style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
                                     <table style="border-collapse: collapse" cellspacing="0" cellpadding="0">
-                                        <tbody><tr>
+                                        <tbody>
+                                        <tr>
                                             <td style="padding: 0 30px;height: 190px;text-align: center;line-height: 22px;width: 260px;">
                                                 <p>购满2件，享8折；满3件，享7折；满4件及以上，享6折</p><br>
                                                 <p>活动4天后结束</p>
                                             </td>
                                         </tr>
-                                    </tbody></table>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                             <div class="DivImg">
@@ -2238,15 +2476,18 @@
                         <div class="theEventImg">
                             <div class="theMask" style="display: none"></div>
                             <div class="text" style="display: none">
-                                <div class="box" style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
+                                <div class="box"
+                                     style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
                                     <table style="border-collapse: collapse" cellspacing="0" cellpadding="0">
-                                        <tbody><tr>
+                                        <tbody>
+                                        <tr>
                                             <td style="padding: 0 30px;height: 190px;text-align: center;line-height: 22px;width: 260px;">
                                                 <p>购满2件，享8折；满3件，享7折；满4件及以上，享6折</p><br>
                                                 <p>活动4天后结束</p>
                                             </td>
                                         </tr>
-                                    </tbody></table>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                             <div class="DivImg">
@@ -2268,15 +2509,18 @@
                         <div class="theEventImg">
                             <div class="theMask" style="display: none"></div>
                             <div class="text" style="display: none">
-                                <div class="box" style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
+                                <div class="box"
+                                     style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
                                     <table style="border-collapse: collapse" cellspacing="0" cellpadding="0">
-                                        <tbody><tr>
+                                        <tbody>
+                                        <tr>
                                             <td style="padding: 0 30px;height: 190px;text-align: center;line-height: 22px;width: 260px;">
                                                 <p>购满2件，享8折；满3件，享7折；满4件及以上，享6折</p><br>
                                                 <p>活动4天后结束</p>
                                             </td>
                                         </tr>
-                                    </tbody></table>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                             <div class="DivImg">
@@ -2298,15 +2542,18 @@
                         <div class="theEventImg">
                             <div class="theMask" style="display: none"></div>
                             <div class="text" style="display: none">
-                                <div class="box" style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
+                                <div class="box"
+                                     style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
                                     <table style="border-collapse: collapse" cellspacing="0" cellpadding="0">
-                                        <tbody><tr>
+                                        <tbody>
+                                        <tr>
                                             <td style="padding: 0 30px;height: 190px;text-align: center;line-height: 22px;width: 260px;">
                                                 <p>购满2件，享8折；满3件，享7折；满4件及以上，享6折</p><br>
                                                 <p>活动4天后结束</p>
                                             </td>
                                         </tr>
-                                    </tbody></table>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                             <div class="DivImg">
@@ -2328,15 +2575,18 @@
                         <div class="theEventImg">
                             <div class="theMask" style="display: none"></div>
                             <div class="text" style="display: none">
-                                <div class="box" style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
+                                <div class="box"
+                                     style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
                                     <table style="border-collapse: collapse" cellspacing="0" cellpadding="0">
-                                        <tbody><tr>
+                                        <tbody>
+                                        <tr>
                                             <td style="padding: 0 30px;height: 190px;text-align: center;line-height: 22px;width: 260px">
                                                 <p>购满2件，享8折；满3件，享7折；满4件及以上，享6折</p><br>
                                                 <p>活动4天后结束</p>
                                             </td>
                                         </tr>
-                                    </tbody></table>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                             <div class="DivImg">
@@ -2358,15 +2608,18 @@
                         <div class="theEventImg">
                             <div class="theMask" style="display: none"></div>
                             <div class="text" style="display: none">
-                                <div class="box" style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
+                                <div class="box"
+                                     style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
                                     <table style="border-collapse: collapse" cellspacing="0" cellpadding="0">
-                                        <tbody><tr>
+                                        <tbody>
+                                        <tr>
                                             <td style="padding: 0 30px;height: 190px;text-align: center;line-height: 22px;width: 260px;">
                                                 <p>购满2件，享8折；满3件，享7折；满4件及以上，享6折</p><br>
                                                 <p>活动4天后结束</p>
                                             </td>
                                         </tr>
-                                    </tbody></table>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                             <div class="DivImg">
@@ -2388,15 +2641,18 @@
                         <div class="theEventImg">
                             <div class="theMask" style="display: none"></div>
                             <div class="text" style="display: none">
-                                <div class="box" style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
+                                <div class="box"
+                                     style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
                                     <table style="border-collapse: collapse" cellspacing="0" cellpadding="0">
-                                        <tbody><tr>
+                                        <tbody>
+                                        <tr>
                                             <td style="padding: 0 30px;height: 190px;text-align: center;line-height: 22px;width: 260px;">
                                                 <p>购满2件，享8折；满3件，享7折；满4件及以上，享6折</p><br>
                                                 <p>活动4天后结束</p>
                                             </td>
                                         </tr>
-                                    </tbody></table>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                             <div class="DivImg">
@@ -2418,15 +2674,18 @@
                         <div class="theEventImg">
                             <div class="theMask" style="display: none"></div>
                             <div class="text" style="display: none">
-                                <div class="box" style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
+                                <div class="box"
+                                     style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
                                     <table style="border-collapse: collapse" cellspacing="0" cellpadding="0">
-                                        <tbody><tr>
+                                        <tbody>
+                                        <tr>
                                             <td style="padding: 0 30px;height: 190px;text-align: center;line-height: 22px;width: 260px;">
                                                 <p>购满2件，享8折；满3件，享7折；满4件及以上，享6折</p><br>
                                                 <p>活动4天后结束</p>
                                             </td>
                                         </tr>
-                                    </tbody></table>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                             <div class="DivImg">
@@ -2448,15 +2707,18 @@
                         <div class="theEventImg">
                             <div class="theMask" style="display: none"></div>
                             <div class="text" style="display: none">
-                                <div class="box" style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
+                                <div class="box"
+                                     style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
                                     <table style="border-collapse: collapse" cellspacing="0" cellpadding="0">
-                                        <tbody><tr>
+                                        <tbody>
+                                        <tr>
                                             <td style="padding: 0 30px;height: 190px;text-align: center;line-height: 22px;width: 260px;">
                                                 <p>购满2件，享8折；满3件，享7折；满4件及以上，享6折</p><br>
                                                 <p>活动4天后结束</p>
                                             </td>
                                         </tr>
-                                    </tbody></table>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                             <div class="DivImg">
@@ -2478,15 +2740,18 @@
                         <div class="theEventImg">
                             <div class="theMask" style="display: none"></div>
                             <div class="text" style="display: none">
-                                <div class="box" style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
+                                <div class="box"
+                                     style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
                                     <table style="border-collapse: collapse" cellspacing="0" cellpadding="0">
-                                        <tbody><tr>
+                                        <tbody>
+                                        <tr>
                                             <td style="padding: 0 30px;height: 190px;text-align: center;line-height: 22px;width: 260px;">
                                                 <p>购满2件，享8折；满3件，享7折；满4件及以上，享6折</p><br>
                                                 <p>活动4天后结束</p>
                                             </td>
                                         </tr>
-                                    </tbody></table>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                             <div class="DivImg">
@@ -2508,15 +2773,18 @@
                         <div class="theEventImg">
                             <div class="theMask" style="display: none"></div>
                             <div class="text" style="display: none">
-                                <div class="box" style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
+                                <div class="box"
+                                     style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
                                     <table style="border-collapse: collapse" cellspacing="0" cellpadding="0">
-                                        <tbody><tr>
+                                        <tbody>
+                                        <tr>
                                             <td style="padding: 0 30px;height: 190px;text-align: center;line-height: 22px;width: 260px;">
                                                 <p>购满2件，享8折；满3件，享7折；满4件及以上，享6折</p><br>
                                                 <p>活动4天后结束</p>
                                             </td>
                                         </tr>
-                                    </tbody></table>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                             <div class="DivImg">
@@ -2566,15 +2834,18 @@
                         <div class="theEventImg">
                             <div class="theMask" style="display: none"></div>
                             <div class="text" style="display: none">
-                                <div class="box" style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
+                                <div class="box"
+                                     style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
                                     <table style="border-collapse: collapse" cellspacing="0" cellpadding="0">
-                                        <tbody><tr>
+                                        <tbody>
+                                        <tr>
                                             <td style="padding: 0 30px;height: 190px;text-align: center;line-height: 22px;width: 260px;">
                                                 <p>购满2件，享8折；满3件，享7折；满4件及以上，享6折</p><br>
                                                 <p>活动4天后结束</p>
                                             </td>
                                         </tr>
-                                    </tbody></table>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                             <div class="DivImg">
@@ -2596,15 +2867,18 @@
                         <div class="theEventImg">
                             <div class="theMask" style="display: none"></div>
                             <div class="text" style="display: none">
-                                <div class="box" style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
+                                <div class="box"
+                                     style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
                                     <table style="border-collapse: collapse" cellspacing="0" cellpadding="0">
-                                        <tbody><tr>
+                                        <tbody>
+                                        <tr>
                                             <td style="padding: 0 30px;height: 190px;text-align: center;line-height: 22px;width: 260px;">
                                                 <p>购满2件，享8折；满3件，享7折；满4件及以上，享6折</p><br>
                                                 <p>活动4天后结束</p>
                                             </td>
                                         </tr>
-                                    </tbody></table>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                             <div class="DivImg">
@@ -2626,15 +2900,18 @@
                         <div class="theEventImg">
                             <div class="theMask" style="display: none"></div>
                             <div class="text" style="display: none">
-                                <div class="box" style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
+                                <div class="box"
+                                     style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
                                     <table style="border-collapse: collapse" cellspacing="0" cellpadding="0">
-                                        <tbody><tr>
+                                        <tbody>
+                                        <tr>
                                             <td style="padding: 0 30px;height: 190px;text-align: center;line-height: 22px;width: 260px;">
                                                 <p>购满2件，享8折；满3件，享7折；满4件及以上，享6折</p><br>
                                                 <p>活动4天后结束</p>
                                             </td>
                                         </tr>
-                                    </tbody></table>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                             <div class="DivImg">
@@ -2656,15 +2933,18 @@
                         <div class="theEventImg">
                             <div class="theMask" style="display: none"></div>
                             <div class="text" style="display: none">
-                                <div class="box" style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
+                                <div class="box"
+                                     style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
                                     <table style="border-collapse: collapse" cellspacing="0" cellpadding="0">
-                                        <tbody><tr>
+                                        <tbody>
+                                        <tr>
                                             <td style="padding: 0 30px;height: 190px;text-align: center;line-height: 22px;width: 260px;">
                                                 <p>购满2件，享8折；满3件，享7折；满4件及以上，享6折</p><br>
                                                 <p>活动4天后结束</p>
                                             </td>
                                         </tr>
-                                    </tbody></table>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                             <div class="DivImg">
@@ -2686,15 +2966,18 @@
                         <div class="theEventImg">
                             <div class="theMask" style="display: none"></div>
                             <div class="text" style="display: none">
-                                <div class="box" style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
+                                <div class="box"
+                                     style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
                                     <table style="border-collapse: collapse" cellspacing="0" cellpadding="0">
-                                        <tbody><tr>
+                                        <tbody>
+                                        <tr>
                                             <td style="padding: 0 30px;height: 190px;text-align: center;line-height: 22px;width: 260px;">
                                                 <p>购满2件，享8折；满3件，享7折；满4件及以上，享6折</p><br>
                                                 <p>活动4天后结束</p>
                                             </td>
                                         </tr>
-                                    </tbody></table>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                             <div class="DivImg">
@@ -2716,15 +2999,18 @@
                         <div class="theEventImg">
                             <div class="theMask" style="display: none"></div>
                             <div class="text" style="display: none">
-                                <div class="box" style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
+                                <div class="box"
+                                     style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
                                     <table style="border-collapse: collapse" cellspacing="0" cellpadding="0">
-                                        <tbody><tr>
+                                        <tbody>
+                                        <tr>
                                             <td style="padding: 0 30px;height: 190px;text-align: center;line-height: 22px;width: 260px;">
                                                 <p>购满2件，享8折；满3件，享7折；满4件及以上，享6折</p><br>
                                                 <p>活动4天后结束</p>
                                             </td>
                                         </tr>
-                                    </tbody></table>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                             <div class="DivImg">
@@ -2746,15 +3032,18 @@
                         <div class="theEventImg">
                             <div class="theMask" style="display: none"></div>
                             <div class="text" style="display: none">
-                                <div class="box" style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
+                                <div class="box"
+                                     style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
                                     <table style="border-collapse: collapse" cellspacing="0" cellpadding="0">
-                                        <tbody><tr>
+                                        <tbody>
+                                        <tr>
                                             <td style="padding: 0 30px;height: 190px;text-align: center;line-height: 22px;width: 260px;">
                                                 <p>购满2件，享8折；满3件，享7折；满4件及以上，享6折</p><br>
                                                 <p>活动4天后结束</p>
                                             </td>
                                         </tr>
-                                    </tbody></table>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                             <div class="DivImg">
@@ -2776,15 +3065,18 @@
                         <div class="theEventImg">
                             <div class="theMask" style="display: none"></div>
                             <div class="text" style="display: none">
-                                <div class="box" style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
+                                <div class="box"
+                                     style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
                                     <table style="border-collapse: collapse" cellspacing="0" cellpadding="0">
-                                        <tbody><tr>
+                                        <tbody>
+                                        <tr>
                                             <td style="padding: 0 30px;height: 190px;text-align: center;line-height: 22px;width: 260px;">
                                                 <p>购满2件，享8折；满3件，享7折；满4件及以上，享6折</p><br>
                                                 <p>活动4天后结束</p>
                                             </td>
                                         </tr>
-                                    </tbody></table>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                             <div class="DivImg">
@@ -2806,15 +3098,18 @@
                         <div class="theEventImg">
                             <div class="theMask" style="display: none"></div>
                             <div class="text" style="display: none">
-                                <div class="box" style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
+                                <div class="box"
+                                     style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
                                     <table style="border-collapse: collapse" cellspacing="0" cellpadding="0">
-                                        <tbody><tr>
+                                        <tbody>
+                                        <tr>
                                             <td style="padding: 0 30px;height: 190px;text-align: center;line-height: 22px;width: 260px;">
                                                 <p>购满2件，享8折；满3件，享7折；满4件及以上，享6折</p><br>
                                                 <p>活动4天后结束</p>
                                             </td>
                                         </tr>
-                                    </tbody></table>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                             <div class="DivImg">
@@ -2836,15 +3131,18 @@
                         <div class="theEventImg">
                             <div class="theMask" style="display: none"></div>
                             <div class="text" style="display: none">
-                                <div class="box" style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
+                                <div class="box"
+                                     style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
                                     <table style="border-collapse: collapse" cellspacing="0" cellpadding="0">
-                                        <tbody><tr>
+                                        <tbody>
+                                        <tr>
                                             <td style="padding: 0 30px;height: 190px;text-align: center;line-height: 22px;width: 260px;">
                                                 <p>购满2件，享8折；满3件，享7折；满4件及以上，享6折</p><br>
                                                 <p>活动4天后结束</p>
                                             </td>
                                         </tr>
-                                    </tbody></table>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                             <div class="DivImg">
@@ -2893,15 +3191,18 @@
                         <div class="theEventImg">
                             <div class="theMask" style="display: none"></div>
                             <div class="text" style="display: none">
-                                <div class="box" style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
+                                <div class="box"
+                                     style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
                                     <table style="border-collapse: collapse" cellspacing="0" cellpadding="0">
-                                        <tbody><tr>
+                                        <tbody>
+                                        <tr>
                                             <td style="padding: 0 30px;height: 190px;text-align: center;line-height: 22px;width: 260px;">
                                                 <p>购满688元，减100元；满1288元，减200元</p><br>
                                                 <p>4天后活动结束</p>
                                             </td>
                                         </tr>
-                                    </tbody></table>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                             <div class="DivImg">
@@ -2923,15 +3224,18 @@
                         <div class="theEventImg">
                             <div class="theMask" style="display: none"></div>
                             <div class="text" style="display: none">
-                                <div class="box" style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
+                                <div class="box"
+                                     style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
                                     <table style="border-collapse: collapse" cellspacing="0" cellpadding="0">
-                                        <tbody><tr>
+                                        <tbody>
+                                        <tr>
                                             <td style="padding: 0 30px;height: 190px;text-align: center;line-height: 22px;width: 260px;">
                                                 <p>购满2件，享8折；满3件，享7折；满4件及以上，享6折</p><br>
                                                 <p>活动4天后结束</p>
                                             </td>
                                         </tr>
-                                    </tbody></table>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                             <div class="DivImg">
@@ -2953,15 +3257,18 @@
                         <div class="theEventImg">
                             <div class="theMask" style="display: none"></div>
                             <div class="text" style="display: none">
-                                <div class="box" style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
+                                <div class="box"
+                                     style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
                                     <table style="border-collapse: collapse" cellspacing="0" cellpadding="0">
-                                        <tbody><tr>
+                                        <tbody>
+                                        <tr>
                                             <td style="padding: 0 30px;height: 190px;text-align: center;line-height: 22px;width: 260px;">
                                                 <p>购满2件，享8折；满3件，享7折；满4件及以上，享6折</p><br>
                                                 <p>活动4天后结束</p>
                                             </td>
                                         </tr>
-                                    </tbody></table>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                             <div class="DivImg">
@@ -2983,15 +3290,18 @@
                         <div class="theEventImg">
                             <div class="theMask" style="display: none"></div>
                             <div class="text" style="display: none">
-                                <div class="box" style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
+                                <div class="box"
+                                     style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
                                     <table style="border-collapse: collapse" cellspacing="0" cellpadding="0">
-                                        <tbody><tr>
+                                        <tbody>
+                                        <tr>
                                             <td style="padding: 0 30px;height: 190px;text-align: center;line-height: 22px;width: 260px;">
                                                 <p>购满2件，享8折；满3件，享7折；满4件及以上，享6折</p><br>
                                                 <p>活动4天后结束</p>
                                             </td>
                                         </tr>
-                                    </tbody></table>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                             <div class="DivImg">
@@ -3013,15 +3323,18 @@
                         <div class="theEventImg">
                             <div class="theMask" style="display: none"></div>
                             <div class="text" style="display: none">
-                                <div class="box" style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
+                                <div class="box"
+                                     style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
                                     <table style="border-collapse: collapse" cellspacing="0" cellpadding="0">
-                                        <tbody><tr>
+                                        <tbody>
+                                        <tr>
                                             <td style="padding: 0 30px;height: 190px;text-align: center;line-height: 22px;width: 260px;">
                                                 <p>购满2件，享8折；满3件，享7折；满4件及以上，享6折</p><br>
                                                 <p>活动4天后结束</p>
                                             </td>
                                         </tr>
-                                    </tbody></table>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                             <div class="DivImg">
@@ -3043,15 +3356,18 @@
                         <div class="theEventImg">
                             <div class="theMask" style="display: none"></div>
                             <div class="text" style="display: none">
-                                <div class="box" style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
+                                <div class="box"
+                                     style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
                                     <table style="border-collapse: collapse" cellspacing="0" cellpadding="0">
-                                        <tbody><tr>
+                                        <tbody>
+                                        <tr>
                                             <td style="padding: 0 30px;height: 190px;text-align: center;line-height: 22px;width: 260px;">
                                                 <p>购满2件，享8折；满3件，享7折；满4件及以上，享6折</p><br>
                                                 <p>活动4天后结束</p>
                                             </td>
                                         </tr>
-                                    </tbody></table>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                             <div class="DivImg">
@@ -3073,15 +3389,18 @@
                         <div class="theEventImg">
                             <div class="theMask" style="display: none"></div>
                             <div class="text" style="display: none">
-                                <div class="box" style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
+                                <div class="box"
+                                     style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
                                     <table style="border-collapse: collapse" cellspacing="0" cellpadding="0">
-                                        <tbody><tr>
+                                        <tbody>
+                                        <tr>
                                             <td style="padding: 0 30px;height: 190px;text-align: center;line-height: 22px;width: 260px;">
                                                 <p>购满2件，享8折；满3件，享7折；满4件及以上，享6折</p><br>
                                                 <p>活动4天后结束</p>
                                             </td>
                                         </tr>
-                                    </tbody></table>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                             <div class="DivImg">
@@ -3133,15 +3452,18 @@
                         <div class="theEventImg">
                             <div class="theMask" style="display: none"></div>
                             <div class="text" style="display: none">
-                                <div class="box" style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
+                                <div class="box"
+                                     style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
                                     <table style="border-collapse: collapse" cellspacing="0" cellpadding="0">
-                                        <tbody><tr>
+                                        <tbody>
+                                        <tr>
                                             <td style="padding: 0 30px;height: 190px;text-align: center;line-height: 22px;width: 260px;">
                                                 <p>购满688元，减100元；满1288元，减200元</p><br>
                                                 <p>4天后活动结束</p>
                                             </td>
                                         </tr>
-                                    </tbody></table>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                             <div class="DivImg">
@@ -3163,15 +3485,18 @@
                         <div class="theEventImg">
                             <div class="theMask" style="display: none"></div>
                             <div class="text" style="display: none">
-                                <div class="box" style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
+                                <div class="box"
+                                     style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
                                     <table style="border-collapse: collapse" cellspacing="0" cellpadding="0">
-                                        <tbody><tr>
+                                        <tbody>
+                                        <tr>
                                             <td style="padding: 0 30px;height: 190px;text-align: center;line-height: 22px;width: 260px;">
                                                 <p>购满2件，享8折；满3件，享7折；满4件及以上，享6折</p><br>
                                                 <p>活动4天后结束</p>
                                             </td>
                                         </tr>
-                                    </tbody></table>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                             <div class="DivImg">
@@ -3193,15 +3518,18 @@
                         <div class="theEventImg">
                             <div class="theMask" style="display: none"></div>
                             <div class="text" style="display: none">
-                                <div class="box" style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
+                                <div class="box"
+                                     style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
                                     <table style="border-collapse: collapse" cellspacing="0" cellpadding="0">
-                                        <tbody><tr>
+                                        <tbody>
+                                        <tr>
                                             <td style="padding: 0 30px;height: 190px;text-align: center;line-height: 22px;width: 260px;">
                                                 <p>购满2件，享8折；满3件，享7折；满4件及以上，享6折</p><br>
                                                 <p>活动4天后结束</p>
                                             </td>
                                         </tr>
-                                    </tbody></table>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                             <div class="DivImg">
@@ -3223,15 +3551,18 @@
                         <div class="theEventImg">
                             <div class="theMask" style="display: none"></div>
                             <div class="text" style="display: none">
-                                <div class="box" style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
+                                <div class="box"
+                                     style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
                                     <table style="border-collapse: collapse" cellspacing="0" cellpadding="0">
-                                        <tbody><tr>
+                                        <tbody>
+                                        <tr>
                                             <td style="padding: 0 30px;height: 190px;text-align: center;line-height: 22px;width: 260px;">
                                                 <p>购满2件，享8折；满3件，享7折；满4件及以上，享6折</p><br>
                                                 <p>活动4天后结束</p>
                                             </td>
                                         </tr>
-                                    </tbody></table>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                             <div class="DivImg">
@@ -3253,15 +3584,18 @@
                         <div class="theEventImg">
                             <div class="theMask" style="display: none"></div>
                             <div class="text" style="display: none">
-                                <div class="box" style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
+                                <div class="box"
+                                     style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
                                     <table style="border-collapse: collapse" cellspacing="0" cellpadding="0">
-                                        <tbody><tr>
+                                        <tbody>
+                                        <tr>
                                             <td style="padding: 0 30px;height: 190px;text-align: center;line-height: 22px;width: 260px;">
                                                 <p>购满2件，享8折；满3件，享7折；满4件及以上，享6折</p><br>
                                                 <p>活动4天后结束</p>
                                             </td>
                                         </tr>
-                                    </tbody></table>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                             <div class="DivImg">
@@ -3283,15 +3617,18 @@
                         <div class="theEventImg">
                             <div class="theMask" style="display: none"></div>
                             <div class="text" style="display: none">
-                                <div class="box" style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
+                                <div class="box"
+                                     style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
                                     <table style="border-collapse: collapse" cellspacing="0" cellpadding="0">
-                                        <tbody><tr>
+                                        <tbody>
+                                        <tr>
                                             <td style="padding: 0 30px;height: 190px;text-align: center;line-height: 22px;width: 260px;">
                                                 <p>购满2件，享8折；满3件，享7折；满4件及以上，享6折</p><br>
                                                 <p>活动4天后结束</p>
                                             </td>
                                         </tr>
-                                    </tbody></table>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                             <div class="DivImg">
@@ -3313,15 +3650,18 @@
                         <div class="theEventImg">
                             <div class="theMask" style="display: none"></div>
                             <div class="text" style="display: none">
-                                <div class="box" style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
+                                <div class="box"
+                                     style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
                                     <table style="border-collapse: collapse" cellspacing="0" cellpadding="0">
-                                        <tbody><tr>
+                                        <tbody>
+                                        <tr>
                                             <td style="padding: 0 30px;height: 190px;text-align: center;line-height: 22px;width: 260px;">
                                                 <p>购满2件，享8折；满3件，享7折；满4件及以上，享6折</p><br>
                                                 <p>活动4天后结束</p>
                                             </td>
                                         </tr>
-                                    </tbody></table>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                             <div class="DivImg">
@@ -3375,15 +3715,18 @@
                         <div class="theEventImg">
                             <div class="theMask" style="display: none"></div>
                             <div class="text" style="display: none">
-                                <div class="box" style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
+                                <div class="box"
+                                     style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
                                     <table style="border-collapse: collapse" cellspacing="0" cellpadding="0">
-                                        <tbody><tr>
+                                        <tbody>
+                                        <tr>
                                             <td style="padding: 0 30px;height: 190px;text-align: center;line-height: 22px;width: 260px;">
                                                 <p>购满688元，减100元；满1288元，减200元</p><br>
                                                 <p>4天后活动结束</p>
                                             </td>
                                         </tr>
-                                    </tbody></table>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                             <div class="DivImg">
@@ -3405,15 +3748,18 @@
                         <div class="theEventImg">
                             <div class="theMask" style="display: none"></div>
                             <div class="text" style="display: none">
-                                <div class="box" style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
+                                <div class="box"
+                                     style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
                                     <table style="border-collapse: collapse" cellspacing="0" cellpadding="0">
-                                        <tbody><tr>
+                                        <tbody>
+                                        <tr>
                                             <td style="padding: 0 30px;height: 190px;text-align: center;line-height: 22px;width: 260px;">
                                                 <p>购满2件，享8折；满3件，享7折；满4件及以上，享6折</p><br>
                                                 <p>活动4天后结束</p>
                                             </td>
                                         </tr>
-                                    </tbody></table>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                             <div class="DivImg">
@@ -3435,15 +3781,18 @@
                         <div class="theEventImg">
                             <div class="theMask" style="display: none"></div>
                             <div class="text" style="display: none">
-                                <div class="box" style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
+                                <div class="box"
+                                     style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
                                     <table style="border-collapse: collapse" cellspacing="0" cellpadding="0">
-                                        <tbody><tr>
+                                        <tbody>
+                                        <tr>
                                             <td style="padding: 0 30px;height: 190px;text-align: center;line-height: 22px;width: 260px;">
                                                 <p>购满2件，享8折；满3件，享7折；满4件及以上，享6折</p><br>
                                                 <p>活动4天后结束</p>
                                             </td>
                                         </tr>
-                                    </tbody></table>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                             <div class="DivImg">
@@ -3465,15 +3814,18 @@
                         <div class="theEventImg">
                             <div class="theMask" style="display: none"></div>
                             <div class="text" style="display: none">
-                                <div class="box" style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
+                                <div class="box"
+                                     style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
                                     <table style="border-collapse: collapse" cellspacing="0" cellpadding="0">
-                                        <tbody><tr>
+                                        <tbody>
+                                        <tr>
                                             <td style="padding: 0 30px;height: 190px;text-align: center;line-height: 22px;width: 260px;">
                                                 <p>购满2件，享8折；满3件，享7折；满4件及以上，享6折</p><br>
                                                 <p>活动4天后结束</p>
                                             </td>
                                         </tr>
-                                    </tbody></table>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                             <div class="DivImg">
@@ -3495,15 +3847,18 @@
                         <div class="theEventImg">
                             <div class="theMask" style="display: none"></div>
                             <div class="text" style="display: none">
-                                <div class="box" style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
+                                <div class="box"
+                                     style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
                                     <table style="border-collapse: collapse" cellspacing="0" cellpadding="0">
-                                        <tbody><tr>
+                                        <tbody>
+                                        <tr>
                                             <td style="padding: 0 30px;height: 190px;text-align: center;line-height: 22px;width: 260px;">
                                                 <p>购满2件，享8折；满3件，享7折；满4件及以上，享6折</p><br>
                                                 <p>活动4天后结束</p>
                                             </td>
                                         </tr>
-                                    </tbody></table>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                             <div class="DivImg">
@@ -3525,15 +3880,18 @@
                         <div class="theEventImg">
                             <div class="theMask" style="display: none"></div>
                             <div class="text" style="display: none">
-                                <div class="box" style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
+                                <div class="box"
+                                     style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
                                     <table style="border-collapse: collapse" cellspacing="0" cellpadding="0">
-                                        <tbody><tr>
+                                        <tbody>
+                                        <tr>
                                             <td style="padding: 0 30px;height: 190px;text-align: center;line-height: 22px;width: 260px;">
                                                 <p>购满2件，享8折；满3件，享7折；满4件及以上，享6折</p><br>
                                                 <p>活动4天后结束</p>
                                             </td>
                                         </tr>
-                                    </tbody></table>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                             <div class="DivImg">
@@ -3555,15 +3913,18 @@
                         <div class="theEventImg">
                             <div class="theMask" style="display: none"></div>
                             <div class="text" style="display: none">
-                                <div class="box" style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
+                                <div class="box"
+                                     style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
                                     <table style="border-collapse: collapse" cellspacing="0" cellpadding="0">
-                                        <tbody><tr>
+                                        <tbody>
+                                        <tr>
                                             <td style="padding: 0 30px;height: 190px;text-align: center;line-height: 22px;width: 260px;">
                                                 <p>购满2件，享8折；满3件，享7折；满4件及以上，享6折</p><br>
                                                 <p>活动4天后结束</p>
                                             </td>
                                         </tr>
-                                    </tbody></table>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                             <div class="DivImg">
@@ -3614,15 +3975,18 @@
                         <div class="theEventImg">
                             <div class="theMask" style="display: none"></div>
                             <div class="text" style="display: none">
-                                <div class="box" style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
+                                <div class="box"
+                                     style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
                                     <table style="border-collapse: collapse" cellspacing="0" cellpadding="0">
-                                        <tbody><tr>
+                                        <tbody>
+                                        <tr>
                                             <td style="padding: 0 30px;height: 190px;text-align: center;line-height: 22px;width: 260px;">
                                                 <p>购满688元，减100元；满1288元，减200元</p><br>
                                                 <p>4天后活动结束</p>
                                             </td>
                                         </tr>
-                                    </tbody></table>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                             <div class="DivImg">
@@ -3644,15 +4008,18 @@
                         <div class="theEventImg">
                             <div class="theMask" style="display: none"></div>
                             <div class="text" style="display: none">
-                                <div class="box" style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
+                                <div class="box"
+                                     style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
                                     <table style="border-collapse: collapse" cellspacing="0" cellpadding="0">
-                                        <tbody><tr>
+                                        <tbody>
+                                        <tr>
                                             <td style="padding: 0 30px;height: 190px;text-align: center;line-height: 22px;width: 260px;">
                                                 <p>购满2件，享8折；满3件，享7折；满4件及以上，享6折</p><br>
                                                 <p>活动4天后结束</p>
                                             </td>
                                         </tr>
-                                    </tbody></table>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                             <div class="DivImg">
@@ -3674,15 +4041,18 @@
                         <div class="theEventImg">
                             <div class="theMask" style="display: none"></div>
                             <div class="text" style="display: none">
-                                <div class="box" style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
+                                <div class="box"
+                                     style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
                                     <table style="border-collapse: collapse" cellspacing="0" cellpadding="0">
-                                        <tbody><tr>
+                                        <tbody>
+                                        <tr>
                                             <td style="padding: 0 30px;height: 190px;text-align: center;line-height: 22px;width: 260px;">
                                                 <p>购满2件，享8折；满3件，享7折；满4件及以上，享6折</p><br>
                                                 <p>活动4天后结束</p>
                                             </td>
                                         </tr>
-                                    </tbody></table>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                             <div class="DivImg">
@@ -3704,15 +4074,18 @@
                         <div class="theEventImg">
                             <div class="theMask" style="display: none"></div>
                             <div class="text" style="display: none">
-                                <div class="box" style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
+                                <div class="box"
+                                     style="width: 320px;height: 190px;border:1px solid #999999;position: relative">
                                     <table style="border-collapse: collapse" cellspacing="0" cellpadding="0">
-                                        <tbody><tr>
+                                        <tbody>
+                                        <tr>
                                             <td style="padding: 0 30px;height: 190px;text-align: center;line-height: 22px;width: 260px;">
                                                 <p>购满2件，享8折；满3件，享7折；满4件及以上，享6折</p><br>
                                                 <p>活动4天后结束</p>
                                             </td>
                                         </tr>
-                                    </tbody></table>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                             <div class="DivImg">
@@ -4465,11 +4838,9 @@
             <!--活动列表end-->
 
 
-
         </div>
     </div>
 </div>
-
 
 
 <!--网页底部-->
@@ -4477,12 +4848,18 @@
     <div class="footer">
         <div class="footer_advantage">
             <ul>
-                <li><a class="a1" href=""><span class="s1"></span><p>100%品牌授权正品</p></a></li>
-                <li><a class="a2" href=""><span class="s2"></span><p>满688免运费</p></a></li>
-                <li><a class="a3" href=""><span class="s3"></span><p>7天无条件退货</p></a></li>
-                <li><a class="a4" href=""><span class="s4"></span><p>超值折扣</p></a></li>
-                <li><a class="a5" href=""><span class="s5"></span><p>9点限时闪购</p></a></li>
-                <li class="footer_advantage_right"><a class="a6" href=""><span class="s6"></span><p>400－664－6698</p></a></li>
+                <li><a class="a1" href=""><span class="s1"></span>
+                    <p>100%品牌授权正品</p></a></li>
+                <li><a class="a2" href=""><span class="s2"></span>
+                    <p>满688免运费</p></a></li>
+                <li><a class="a3" href=""><span class="s3"></span>
+                    <p>7天无条件退货</p></a></li>
+                <li><a class="a4" href=""><span class="s4"></span>
+                    <p>超值折扣</p></a></li>
+                <li><a class="a5" href=""><span class="s5"></span>
+                    <p>9点限时闪购</p></a></li>
+                <li class="footer_advantage_right"><a class="a6" href=""><span class="s6"></span>
+                    <p>400－664－6698</p></a></li>
             </ul>
         </div>
         <p class="footer_link">
@@ -4499,8 +4876,10 @@
             <span>COPYRIGHT©2016  杭州魅俪信息技术有限公司版权所有</span>浙ICP备16004860号-1
         </p>
         <p class="footer_license">
-            <span><a href="" target="_blank" rel="nofollow"><img src="{% static 'images/foot1.jpg.png' %}" width="35" height="36"></a></span>
-            <a href="" target="_blank" rel="nofollow"><img src="{% static 'images/foot2.jpg.png' %}" width="105" height="35"></a>
+            <span><a href="" target="_blank" rel="nofollow"><img src="{% static 'images/foot1.jpg.png' %}" width="35"
+                                                                 height="36"></a></span>
+            <a href="" target="_blank" rel="nofollow"><img src="{% static 'images/foot2.jpg.png' %}" width="105"
+                                                           height="35"></a>
         </p>
     </div>
 </div>

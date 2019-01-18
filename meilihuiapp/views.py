@@ -6,7 +6,7 @@ from django.http import JsonResponse
 from django.shortcuts import render, redirect
 
 # Create your views here.
-from meilihuiapp.models import User, Lunbo,Men, GoodsDetailed
+from meilihuiapp.models import User, Lunbo, Men, GoodsDetailed, Cart
 
 
 def index(request):
@@ -77,13 +77,21 @@ def logout(request):
 
 def detailed(request,goodsid):
     goods=GoodsDetailed.objects.get(pk=goodsid)
+    token = request.session.get('token')
+    user = None
+    if token:
+        user = User.objects.get(token=token)
 
-    return render(request,'details.html', context={'goods':goods})
+    return render(request,'details.html', context={'goods':goods,'user':user})
 
 
 def men(request):
     mens=Men.objects.all()
-    return render(request,'men.html',context={'mens':mens})
+    token = request.session.get('token')
+    user = None
+    if token:
+        user = User.objects.get(token=token)
+    return render(request,'men.html',context={'mens':mens,'user':user})
 
 
 def checkemail(request):
@@ -93,3 +101,41 @@ def checkemail(request):
         return JsonResponse({'msg':'账号已存在','status':0})
     else:
         return JsonResponse({'mgs':'账号可用','status':1})
+
+
+def cart(request):
+    token = request.session.get('token')
+    user = None
+    if token:
+        user = User.objects.get(token=token)
+        carts=Cart.objects.filter(user=user).exclude(number=0)
+        data ={
+            'user': user,
+            'carts':carts
+        }
+    return render(request,'cart.html',data)
+
+
+def addcart(request):
+    token=request.session.get('token')
+    num = request.GET.get('value')
+    if token:
+        user=User.objects.get(token=token)
+        goodsid = request.GET.get('goodsid')
+        goods=GoodsDetailed.objects.get(pk=goodsid)
+        carts=Cart.objects.filter(user=user).filter(goods=goods)
+        if carts.exists():
+         cart=carts.first()
+         cart.number=cart.number+int(num)
+         cart.save()
+
+        else:
+            cart=Cart()
+            cart.user=user
+            cart.goods=goods
+            cart.number=num
+            cart.save()
+        return JsonResponse({'msg':'添加成功','status':1,'number':cart.number})
+
+    else:
+        return JsonResponse({'msg':'请登录','status':0})
