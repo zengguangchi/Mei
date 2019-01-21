@@ -13,5 +13,8 @@ urlpatterns=[
     url(r'^checkemail/$',views.checkemail,name='checkemail'),
     url(r'^men/$',views.men,name='men'),
     url(r'^detailed/(\d+)/$',views.detailed,name='detailed'),
-
+    url(r'^cartaddgoods/$',views.cartaddgoods,name='cartaddgoods'),
+    url(r'^cartsugoods/$',views.cartsugoods,name='cartsugoods'),
+    url(r'^chakanstuats/$',views.chakanstuats,name='chakanstuats'),
+    url(r'^chakanall/$',views.chakanall,name='chakanall'),
 ]

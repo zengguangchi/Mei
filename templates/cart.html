@@ -430,7 +430,7 @@
                 <div class="list_content">
                     <div class="packageType clearfix">
                         <h3>
-                            <input type="checkbox" id="checkAll">全选 &nbsp;&nbsp;&nbsp;魅力惠直发
+                            <input type="checkbox" id="checkAll" isall="true">全选 &nbsp;&nbsp;&nbsp;魅力惠直发
                         </h3>
                     </div>
                     <!--
@@ -438,12 +438,17 @@
                               <!--购物袋列表 end-->
                     <div class="box_effect">
                         <ul>
-                            <li class="box_effect_bg">
+                            <li class="box_effect_bg" >
                                 <div class="box_effect_content">
                                     {% for cart in carts %}
-                                        <ul class="list_content_ul clearfix">
+                                        <ul class="list_content_ul clearfix" >
                                             <li id="checkboxli">
-                                                <input type="checkbox" class="check">
+                                                {% if cart.isselect %}
+                                                    <input type="checkbox" class="check  ok"  cartid="{{ cart.id }}" checked="checked">
+                                                {% else %}
+                                                     <input type="checkbox" class="check no "  cartid="{{ cart.id }}">
+                                                {% endif %}
+
                                             </li>
                                             <li class="list_content_left">
                                                 <p class="list_content_img border_color1">
@@ -452,14 +457,14 @@
                                                             title="{{ cart.goods.title }}" alt=""></a>
                                                 </p>
                                                 <p class="list_content_info">
-    			                        <span class="list_content_name" title="KENT&amp;CURVEN">
-    			                        		<a target="_blank" href="" class="sublong"
-                                                   style="width: 250px;">{{ cart.goods.pr1 }}</a>
+    			                        <span class="list_content_name" title="KENT&amp;CURVEN"></a>
     			                        </span>
                                                     <span title="{{ cart.goods.title }}">
+
     			                        		<a target="_blank" href="" class="sublong"
+                                                   style="width: 250px;">	<a target="_blank" href="" class="sublong"
                                                    style="width: 250px;">{{ cart.goods.title }}</a>
-    			                        </span>
+
                                                     <span class="list_content_size">尺寸：039</span>
                                                     <span class="list_content_State" id="3026015200000387748"></span>
                                                 </p>
@@ -467,13 +472,13 @@
                                             <li class="price">{{ cart.goods.span }}</li>
                                             <li>
                                                 <div class="number_choose">
-                                                    <span class="number_reduce">-</span>
-                                                    <span class="quantity_number"><input value='{{ cart.number }}'class="productNum"></span>
-                                                    <span class="number_increase">+</span>
+                                                    <span class="number_reduce" goodsid="{{ cart.goods.id }}">-</span>
+                                                    <span class="quantity_number" num="{{ cart.number }}">{{ cart.number }}</span>
+                                                    <span class="number_increase" goodsid="{{ cart.goods.id }}">+</span>
                                                 </div>
                                             </li>
                                             <li></li>
-                                            <li class="priceSum">{{ cart.goods.span }}</li>
+                                            <li class="priceSum" price="{{ cart.goods.span }}">{{ cart.goods.span }}</li>
                                             <li class="li_pop">
                                                 <div class="pop_up_box box2 box_2" style="display: none;">
                                                     <div class="box_top">PRIMARY

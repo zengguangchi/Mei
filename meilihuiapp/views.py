@@ -139,3 +139,59 @@ def addcart(request):
 
     else:
         return JsonResponse({'msg':'请登录','status':0})
+
+
+def cartaddgoods(request):
+    token=request.session.get('token')
+    if token:
+        user = User.objects.get(token=token)
+        goodsid = request.GET.get('goodsid')
+        goods = GoodsDetailed.objects.get(pk=goodsid)
+        carts = Cart.objects.filter(user=user).filter(goods=goods)
+        if carts.exists():
+            cart = carts.first()
+            cart.number = cart.number +1
+            cart.save()
+        return JsonResponse({'status':1,'number':cart.number})
+
+def cartsugoods(request):
+    token=request.session.get('token')
+    user = User.objects.get(token=token)
+    goodsid = request.GET.get('goodsid')
+    goods = GoodsDetailed.objects.get(pk=goodsid)
+    carts = Cart.objects.filter(user=user).filter(goods=goods)
+    if carts.exists():
+        cart = carts.first()
+        cart.number = cart.number -1
+        cart.save()
+    return JsonResponse({'status':1,'number':cart.number})
+
+
+def chakanstuats(request):
+    cartid=request.GET.get('cartid')
+    cart=Cart.objects.get(pk=cartid)
+    cart.isselect= not  cart.isselect
+    cart.save()
+    data={
+        'msg':'修改状态',
+        "status":1,
+        'isselect':cart.isselect
+    }
+    return JsonResponse(data)
+
+
+def chakanall(request):
+    token=request.session.get('token')
+    user=User.objects.get(token=token)
+    isall=request.GET.get('isall')
+    if isall=='ture':
+        isall=True
+    else:
+        isall=False
+    cart=Cart.objects.filter(user=user).update(isselect=isall)
+
+    data={
+          'msg':'全选修改状态',
+            'status':1
+        }
+    return JsonResponse(data)

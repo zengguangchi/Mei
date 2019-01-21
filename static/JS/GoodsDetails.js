@@ -324,7 +324,7 @@ $(function () {
             if (response.status == 0) {
                 window.open('/mlh/login/', target = '_self')
             } else if (response.status == 1) {
-                window.open('/mlh/cart', target = '_self')
+                alert('添加购物车成功')
             }
 
         })
