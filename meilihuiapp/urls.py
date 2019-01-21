@@ -17,4 +17,7 @@ urlpatterns=[
     url(r'^cartsugoods/$',views.cartsugoods,name='cartsugoods'),
     url(r'^chakanstuats/$',views.chakanstuats,name='chakanstuats'),
     url(r'^chakanall/$',views.chakanall,name='chakanall'),
+    url(r'^genratorder/$',views.genratorder,name='genratorder'),
+    url(r'^orderdetail/(.+)/$',views.orderdetail, name='orderdetail'),
+    url(r'^orderlist/(\d+)/$',views.orderlist,name='orderlist'),
 ]

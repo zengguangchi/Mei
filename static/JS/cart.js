@@ -96,27 +96,7 @@ $(function () {
             }
         })
     });
-  // function toal() {
-  //     var  sum=0
-  //       $('.box_effect_bg').each(function () {
-  //       var $confirm=$(this).find('#checkboxli')
-  //           console.log($confirm)
-  //       var $content=$(this).find('.quantity_number')
-  //       if  (){
-  //           var num = $content.html()
-  //           var por= $('.price').html()
-  //           sum=num*por
-  //       }
-  //   })
-  //     console.log(num)
-  //   $('#pricetotal').html(parseInt(num))
-  // }
-  // $("#checkboxli").each(function () {
-  //       var $confirm=$(this).find('.checked').length
-  //
-  //     console.log($confirm)
-  //
-  //     })
+
       function total() {
           var sum=0
           $('.list_content_ul ').each(function () {
@@ -135,5 +115,16 @@ $(function () {
       })
       }
 
+    $('.button4').click(function () {
+        window.open('/mlh/men/')
+    })
+    $('.button3').click(function () {
+        $.get('/mlh/genratorder/',function (response) {
+            console.log(response)
+            if ( response.status == 1){
+                window.open('/mlh/orderdetail/'+response.identifier+'/',target='_self')
+            }
+        })
+    })
 
 });

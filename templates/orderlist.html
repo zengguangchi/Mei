@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>订单列表</title>
+    <link rel="stylesheet" href="{% static 'CSS/orderlist.css' %}">
+</head>
+<body>
+    <div class="orderdetail">
+        <ul>
+            {% for order in orders %}
+                <li>
+                    <a href="{% url 'mlh:orderdetail' order.identifier %}">
+                       {{ forloop.counter }}、{{ order.identifier}}
+                        <span style="background: red;color: white">
+                            {% if order.status == 0 %}
+                                未付款
+                              {% elif order.status == 1 %}
+                                付款
+                            {% endif %}
+                        </span>
+                    </a>
+
+                </li>
+            {% endfor %}
+
+        </ul>
+    </div>
+</body>
+</html>

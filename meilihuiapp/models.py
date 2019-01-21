@@ -36,3 +36,12 @@ class Cart(models.Model):
     goods=models.ForeignKey(GoodsDetailed)
     isselect=models.BooleanField(default=True)
     number=models.IntegerField()
+class Order(models.Model):
+    user =models.ForeignKey(User)
+    status=models.IntegerField(default=0)
+    createtime=models.DateField(auto_now_add=True)
+    identifier=models.CharField(max_length=256)
+class OrderGoods(models.Model):
+    order=models.ForeignKey(Order)
+    goods=models.ForeignKey(GoodsDetailed)
+    number=models.IntegerField()

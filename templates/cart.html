@@ -19,7 +19,7 @@
 <div class="header_container">
     <div class="header">
         <div class="quick_access">
-            <div class="quick_access_left">
+                <div class="quick_access_left">
                 <ul id="ul_header">
                     <li class="theLi">
                         <img class="youli" src="{% static 'images/zhuceyouli.gif' %}" alt="">
@@ -39,11 +39,19 @@
                         <li class="theLi">
                             <a href={% url 'mlh:logout' %}>退出</a><span>|</span>
                         </li>
+                        <li class="theLi">
+                            <a href={% url 'mlh:cart' %}>购物车</a><span>|</span>
+                        </li>
+                         <li class="theLi">
+                            <a href={% url 'mlh:orderlist'  0%}>我的订单</a><span>|</span>
+                        </li>
+
                     {% endif %}
                     <li class="theLi">
                         <a href="#">收藏</a>
                     </li>
                 </ul>
+
             </div>
             <div class="quick_access_right">
                 <ul>

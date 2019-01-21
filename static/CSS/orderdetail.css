@@ -1,0 +1,18 @@
+
+ul li{
+    list-style: none;
+}
+.img img{
+    width: 100px;
+    height: 100px;
+}
+#pay{
+    position: absolute;
+    width: 70px;
+    height: 40px;
+    background: yellow;
+    color: white;
+    left: 200px;
+    text-align: center;
+    line-height: 40px;
+}

@@ -6,7 +6,7 @@ from django.http import JsonResponse
 from django.shortcuts import render, redirect
 
 # Create your views here.
-from meilihuiapp.models import User, Lunbo, Men, GoodsDetailed, Cart
+from meilihuiapp.models import User, Lunbo, Men, GoodsDetailed, Cart, Order, OrderGoods
 
 
 def index(request):
@@ -195,3 +195,43 @@ def chakanall(request):
             'status':1
         }
     return JsonResponse(data)
+
+
+def generate_identifier():
+    temper=str(time.time())+str(random.random())
+    return temper
+
+
+
+def genratorder(request, ):
+    token=request.session.get('token')
+    user=User.objects.get(token=token)
+    order=Order()
+    order.user=user
+    order.identifier=generate_identifier()
+    order.save()
+    carts=Cart.objects.filter(user=user).filter(isselect=True).exclude(number=0)
+    for cart in carts:
+        orderGoods=OrderGoods()
+        orderGoods.order=order
+        orderGoods.goods=cart.goods
+        orderGoods.number=cart.number
+        orderGoods.save()
+        cart.delete()
+    data ={
+        'msg':'下单成功',
+        'status':1,
+        'identifier':order.identifier
+    }
+
+    return JsonResponse(data)
+
+
+def orderdetail(request ,identifier):
+    order=Order.objects.get(identifier=identifier)
+    return render(request,'orderdetail.html' ,context={'order':order})
+
+
+def orderlist(request,status):
+    orders=Order.objects.filter(status=status)
+    return render(request,'orderlist.html',context={'orders':orders})
